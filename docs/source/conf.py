@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'TEST_Read_the_docs'
+project = 'Lets_test_read_the_docs_stak'
 copyright = '2020, Stella Stakiadi'
 author = 'Stella Stakiadi'
 
@@ -35,9 +35,6 @@ extensions = [
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-
-# The master toctree document.
-master_doc = 'TEST_Read_the_docs'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
