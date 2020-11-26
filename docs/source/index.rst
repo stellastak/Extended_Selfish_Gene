@@ -14,7 +14,7 @@ First module
 
 .. automodule:: first_try
    :members:
-   :
+
 
 
 .. toctree::
