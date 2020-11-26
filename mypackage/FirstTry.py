@@ -1,4 +1,4 @@
-class First_try:
+class FirstTry:
 
     def __init__(self, number_a, number_b):
         self.num_a = number_a
