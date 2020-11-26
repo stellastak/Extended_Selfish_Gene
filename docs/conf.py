@@ -12,17 +12,17 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath('..'))
+
 
 # -- Project information -----------------------------------------------------
 
-project = 'LetsTryRTD'
+project = 'TestReadTheDocs'
 copyright = '2020, Stella Stakiadi'
 author = 'Stella Stakiadi'
-master_doc = 'index'
-# The full version, including alpha/beta/rc tags
-release = '0.0.1'
 
+# The full version, including alpha/beta/rc tags
+release = '0.0.2'
 
 
 # -- General configuration ---------------------------------------------------
@@ -38,7 +38,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['pages/reference-architecture', 'some/other/file.txt']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
 # -- Options for HTML output -------------------------------------------------
