@@ -1,6 +1,33 @@
-class FirstTry:
+"""
+FirstTry.py
+====================================
+The core module of my example project
+"""
+
+
+def about_me(your_name):
+    """
+    Return the most important thing about a person.
+
+    Parameters
+    ----------
+    your_name
+        A string indicating the name of the person.
+    """
+    return "The wise {} loves Python.".format(your_name)
+
+
+class FirstTry():
 
     def __init__(self, number_a, number_b):
+        """
+        Return Blah blah blah.
+
+        Parameters
+        ---------
+        number_a, number_b
+            To numbers to be calculated.
+        """
         self.num_a = number_a
         self.num_b = number_b
 
@@ -9,7 +36,12 @@ class FirstTry:
 
     def add(self):
         """
-        comments here
+        Return the most important thing about a person.
+
+        Parameters
+        ----------
+        number_a, number_b
+        Two ints to be added.
         """
         return self.num_a + self.num_b
 
