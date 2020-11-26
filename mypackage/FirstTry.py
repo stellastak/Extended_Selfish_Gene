@@ -35,5 +35,5 @@ class FirstTry:
 
 
 if __name__ == "__main__":
-    calc1 = First_try(5, 3)
+    calc1 = FirstTry(5, 3)
     calc1.add()
