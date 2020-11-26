@@ -12,7 +12,7 @@ And something more interesting. ::
 First module
 ============
 
-.. automodule:: first_try
+.. automodule:: .first_try
    :members:
 
 
