@@ -1,0 +1,79 @@
+#############################################################################
+#   _________ ____________  ___                                             #
+#  /   _____//  _____/\   \/  /  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  #
+#  \_____  \/   \  ___ \     /   THE E(X)TENDED (S)ELFISH (G)ENE ALGORITHM  #
+#  /        \    \_\  \/     \   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  #
+# /_________/\________/___/\  \  https://github.com/squillero/sgx           #
+#                           \_/                                             #
+#                                                                           #
+# Copyright © 2020 Giovanni Squillero  --  Licensed under Apache-2.0        #
+#                                                                           #
+#############################################################################
+
+# Enable build config validation
+version: ~> 1.0
+
+language: python
+
+branches:
+  except:
+    - /^exp\/.*/
+
+install:
+  - cd src
+  - pip3 install --upgrade pytest
+  - pip3 install . || pip3 install --user .
+  - pip3 install --upgrade coloredlogs psutil
+
+jobs:
+  include:
+    - name: "Python 3.6 on Ubuntu 16.04"
+      python: 3.6
+      dist: xenial
+    - name: "Python 3.7 on Ubuntu 16.04"
+      python: 3.7
+      dist: xenial
+    - name: "Python 3.8 on Ubuntu 16.04"
+      python: 3.8
+      dist: xenial
+    - name: "Python 3.9 on Ubuntu 18.04"
+      python: 3.9
+      arch: amd64
+      dist: bionic
+    - name: "Python 3.9 on Ubuntu 18.04 (w/o optional packages)"
+      python: 3.9
+      arch: amd64
+      dist: bionic
+      before_script:
+        - pip3 uninstall --yes coloredlogs psutil
+    - name: "Python 3.9 on Ubuntu 18.04 (ARM)"
+      python: 3.9
+      arch: arm64
+      dist: bionic
+    - name: "Python 3.9 on Ubuntu 18.04 (PowerPC)"
+      python: 3.9
+      arch: ppc64le
+      dist: bionic
+    - name: "Python 3.9 on Ubuntu 18.04 (IBM Z)"
+      python: 3.9
+      arch: s390x
+      dist: bionic
+    - name: "Bleeding edge Python on Ubuntu 20.04"
+      python: nightly
+      dist: focal
+
+    - name: "Python 3.8 on Windows"   # Python 3.8.0 running on macOS 10.14.4
+      os: windows
+      language: shell
+      before_install:
+        - choco install python --version 3.8
+      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+
+    - name: "Python 3.7 on macOS"     # Python 3.7.4 running on macOS 10.14.4
+      os: osx
+      osx_image: xcode11.2
+      language: shell
+
+script:
+  - python -m pytest
+  - python -OO -m pytest
