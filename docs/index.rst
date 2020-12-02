@@ -6,6 +6,23 @@
 Welcome to The Extended Selfish Gene's documentation!
 =====================================================
 
+Let's see something
+^^^^^^^^^^^^^^^^^^^
+
+And something more interesting. ::
+
+   print 'hello'
+   >> hello
+
+First module
+============
+
+.. automodule:: mypackage.FirstTry
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
