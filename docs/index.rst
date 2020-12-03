@@ -10,7 +10,7 @@ The Selfish Gene Algorithm is a population-less evolutionary optimizer loosely i
 
 Since 1998, the Selfish Gene was exploited by different researchers, and a few brand new approaches derived from it. For celebrating (almost) a quarter century mark, it has been rewritten from scratch in Python 3, with improved usability and tons of new features.
 
-.. automodule:: archive
+.. automodule:: sgx.archive
    :members:
    :undoc-members:
    :show-inheritance:
