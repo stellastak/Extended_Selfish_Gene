@@ -14,6 +14,8 @@ Since 1998, the Selfish Gene was exploited by different researchers, and a few b
    :members:
    :undoc-members:
    :show-inheritance:
+   :private-members:
+   :special-members:
 
 
 .. toctree::
