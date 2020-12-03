@@ -1,7 +1,7 @@
-testRTD
-=======
+docs
+====
 
 .. toctree::
    :maxdepth: 4
 
-   src
+   conf
