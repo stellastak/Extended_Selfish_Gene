@@ -42,13 +42,6 @@ __copyright__ = "Copyright (c) 2020 Giovanni Squillero. Licensed under Apache-2.
 import sys
 import warnings
 
-from .utils import logging
-from . import allele
-from . import fitness
-from . import algorithms
-from . import t
-
-from .species import Species
 
 sys.stderr.flush()
 sys.stdout.flush()
