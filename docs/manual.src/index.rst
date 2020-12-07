@@ -10,7 +10,10 @@ Welcome to Extended Selfish Gene's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   src.rst
+.. automodule:: src.rst
+   :members:
+   :private-members:
+   :special-members:
 
 Indices and tables
 ==================
