@@ -27,10 +27,17 @@ Table of Contents
    instructions.rst
 
 
-.. automodule:: src.rst
-   :members:
-   :private-members:
-   :special-members:
+.. toctree::
+   :caption: API reference
+   :maxdepth: 2
+
+   modules/microgp/individual
+   modules/microgp/constraints
+   modules/microgp/darwin
+   modules/microgp/individual_operators
+   modules/microgp/fitness/fitness
+   modules/microgp/parameter/parameters
+   modules/microgp/abstract
 
 .. toctree::
    :caption: Copyright
