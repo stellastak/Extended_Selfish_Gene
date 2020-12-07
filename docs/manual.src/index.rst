@@ -1,8 +1,3 @@
-.. Extended Selfish Gene documentation master file, created by
-   sphinx-quickstart on Mon Dec  7 13:27:00 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to Extended Selfish Gene's documentation!
 =================================================
 
@@ -31,6 +26,9 @@ Table of Contents
    :caption: API reference
    :maxdepth: 2
 
+    modules/sgx/modules.rst
+    modules/sgx/src.rst
+    modules/sgx/src.sgx.rst
 
 .. toctree::
    :caption: Copyright
