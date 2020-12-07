@@ -1,7 +1,7 @@
-sgx
-===
+testRTD
+=======
 
 .. toctree::
    :maxdepth: 4
 
-   sgx
+   src

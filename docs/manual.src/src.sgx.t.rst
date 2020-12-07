@@ -1,10 +1,10 @@
-sgx.t package
-=============
+src.sgx.t package
+=================
 
 Module contents
 ---------------
 
-.. automodule:: sgx.t
+.. automodule:: src.sgx.t
    :members:
    :undoc-members:
    :show-inheritance:
