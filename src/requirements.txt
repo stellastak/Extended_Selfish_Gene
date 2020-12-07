@@ -1,3 +1,0 @@
-tqdm>=4.5
-coloredlogs>=14
-#psutil>=5.7
