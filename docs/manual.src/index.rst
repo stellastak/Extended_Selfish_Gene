@@ -26,9 +26,8 @@ Table of Contents
    :caption: API reference
    :maxdepth: 2
 
-    modules/sgx/modules.rst
-    modules/sgx/src.rst
-    modules/sgx/src.sgx.rst
+    modules/sgx/allele.rst
+    modules/sgx/fitness.rst
 
 .. toctree::
    :caption: Copyright
