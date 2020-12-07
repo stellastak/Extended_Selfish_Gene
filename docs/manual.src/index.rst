@@ -6,6 +6,22 @@
 Welcome to Extended Selfish Gene's documentation!
 =================================================
 
+| :ref:`genindex`
+
+.. toctree::
+   :caption: Introduction
+   :maxdepth: 1
+
+   about_sgx.rst
+   Developer repository <https://github.com/squillero/sgx>
+
+.. toctree::
+   :caption: User Guide
+   :maxdepth: 2
+
+   instructions.rst
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -15,9 +31,15 @@ Welcome to Extended Selfish Gene's documentation!
    :private-members:
    :special-members:
 
+.. toctree::
+   :caption: Copyright
+   :maxdepth: 1
+
+   authors
+   license
+
 Indices and tables
 ==================
 
-* :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
