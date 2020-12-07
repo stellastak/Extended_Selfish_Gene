@@ -16,8 +16,16 @@ Since 1998, the Selfish Gene was exploited by different researchers, and a few b
    :maxdepth: 2
    :caption: Contents:
 
+.. toctree::
+   :caption: API reference
+   :maxdepth: 2
 
-
+   sgx
+   sgx.algorithms
+   sgx.allele
+   sgx.fitness
+   sgx.t
+   sgx.utils
 
 
 

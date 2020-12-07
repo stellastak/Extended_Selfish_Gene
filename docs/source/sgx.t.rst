@@ -1,10 +1,10 @@
-testRTD.src.sgx.t package
-=========================
+sgx.t package
+=============
 
 Module contents
 ---------------
 
-.. automodule:: testRTD.src.sgx.t
+.. automodule:: sgx.t
    :members:
    :undoc-members:
    :show-inheritance:
