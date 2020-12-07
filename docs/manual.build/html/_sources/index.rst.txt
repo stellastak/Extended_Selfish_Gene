@@ -6,6 +6,11 @@
 Welcome to Extended Selfish Gene's documentation!
 =================================================
 
+
+"""""""""""""""""
+Table of Contents
+"""""""""""""""""
+
 | :ref:`genindex`
 
 .. toctree::
@@ -22,10 +27,6 @@ Welcome to Extended Selfish Gene's documentation!
    instructions.rst
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 .. automodule:: src.rst
    :members:
    :private-members:
@@ -35,11 +36,10 @@ Welcome to Extended Selfish Gene's documentation!
    :caption: Copyright
    :maxdepth: 1
 
-   authors
-   license
+   authors.rst
+   license.rst
 
 Indices and tables
 ==================
 
 * :ref:`modindex`
-* :ref:`search`
