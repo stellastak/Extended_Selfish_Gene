@@ -26,8 +26,8 @@ Table of Contents
    :caption: API reference
    :maxdepth: 2
 
-    modules/sgx/allele.rst
-    modules/sgx/fitness.rst
+    modules/sgx/allele
+    modules/sgx/fitness
 
 .. toctree::
    :caption: Copyright
@@ -39,4 +39,4 @@ Table of Contents
 Indices and tables
 ==================
 
-* :ref:`modindex`
+| :ref:`modindex`
