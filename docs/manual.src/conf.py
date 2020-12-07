@@ -24,6 +24,7 @@ import sgx
 project = sgx.__name__
 release = sgx.__version__
 author = sgx.__author__
+
 copyright = '2020, Giovanni Squillero'
 author = 'Giovanni Squillero'
 
