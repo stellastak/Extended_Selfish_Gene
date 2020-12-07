@@ -27,10 +27,10 @@ Table of Contents
    instructions.rst
 
 
-.. automodule:: src.rst
-   :members:
-   :private-members:
-   :special-members:
+.. toctree::
+   :caption: API reference
+   :maxdepth: 2
+
 
 .. toctree::
    :caption: Copyright
