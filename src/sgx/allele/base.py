@@ -30,8 +30,8 @@
 from typing import Tuple, Optional, Hashable
 from abc import ABC, abstractmethod
 
-from ..utils import logging
 from ..base import Paranoid, Pedantic
+from ..utils import logging
 
 
 class Allele(Paranoid, Pedantic, ABC):
