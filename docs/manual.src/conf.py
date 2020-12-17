@@ -64,10 +64,10 @@ html_show_copyright = False
 html_show_sphinx = True
 html_theme = 'sphinx_rtd_theme'
 
-html_show_sourcelink = False
 html_logo = '../images/logo/tran_dna.png'
 html_favicon = '../images/icons/favicon.png'
 
+html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
