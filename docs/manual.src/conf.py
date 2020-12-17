@@ -69,6 +69,22 @@ html_favicon = '../images/icons/favicon.png'
 
 html_show_sourcelink = False
 
+html_theme_options = {
+    'canonical_url': 'https://read-the-docs-for-sgx.readthedocs.io/',
+    'analytics_id': 'UA-28094298-6',  # Provided by Google in your dashboard
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'style_nav_header_background': '',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
