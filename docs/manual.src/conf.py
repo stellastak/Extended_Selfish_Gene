@@ -65,7 +65,7 @@ html_show_sphinx = True
 html_theme = 'sphinx_rtd_theme'
 
 html_show_sourcelink = False
-html_logo = '../images/logo/dna_tran.png'
+html_logo = '../images/logo/trans_dna.jpg'
 html_favicon = '../images/icons/favicon.png'
 
 
