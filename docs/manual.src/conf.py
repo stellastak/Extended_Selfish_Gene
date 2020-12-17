@@ -59,11 +59,14 @@ exclude_patterns = list()
 #
 
 html_title = f"{sgx.__name__} "
-html_short_title = f"sgx{sgx.__version__}"
+html_short_title = f"The Extended Selfish Gene{sgx.__version__}"
 html_show_copyright = False
 html_show_sphinx = True
 html_theme = 'sphinx_rtd_theme'
+
 html_show_sourcelink = False
+html_logo = '../images/logo/dna_logo.png'
+html_favicon = '../images/icons/favicon.png'
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
