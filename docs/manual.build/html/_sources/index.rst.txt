@@ -36,7 +36,10 @@ Table of Contents
    authors.rst
    license.rst
 
-Indices and tables
-==================
+.. toctree::
+   :caption: Appendixes
+   :maxdepth: 1
+
+   contributors
 
 | :ref:`modindex`
