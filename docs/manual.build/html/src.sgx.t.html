@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>What is SGX? &mdash; sgx </title>
+  <title>src.sgx.t package &mdash; sgx </title>
   
 
   
@@ -20,7 +20,7 @@
   
   
   
-    <link rel="canonical" href="https://read-the-docs-for-sgx.readthedocs.io/about_sgx.html"/>
+    <link rel="canonical" href="https://read-the-docs-for-sgx.readthedocs.io/src.sgx.t.html"/>
   
 
   
@@ -39,9 +39,7 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="instructions.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="index.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,11 +88,8 @@
             
             
               <p class="caption"><span class="caption-text">Contents</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">What is SGX?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#audience">Audience</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about_sgx.html">What is SGX?</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/squillero/sgx">Developer repository</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
@@ -155,7 +150,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>What is SGX?</li>
+      <li>src.sgx.t package</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,20 +167,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="what-is-sgx">
-<h1>What is SGX?<a class="headerlink" href="#what-is-sgx" title="Permalink to this headline">¶</a></h1>
-<p>The Selfish Gene optimization algorithm (SG) is a population-less evolutionary algorithm loosely inspired by the interpretation of the Darwinian theory given by the English biologist Richard Dawkins and popularized as the Selfish Gene theory. It enables a user to efficiently find the list parameters, either discrete symbols or real numbers, that maximizes a given target function.</p>
-<p>The original SG was an almost straightforward implementation of a though experiment, only able to handle binary values; it was published in SAC98 as “The selfish gene algorithm: a new evolutionary optimization strategy” (DOI: 10.1145/330560.330838) and few month later, with some modifications, in ICEC98 as “A new evolutionary algorithm inspired by the selfish gene theory” (DOI: 10.1109/ICEC.1998.700092).</p>
-<p>The base algorithm was later discovered surprisingly similar to the Equilibrium Genetic Algorithm, developed by Ari Juels, Shumeet Baluja, and Alistair Sinclair in 1993 and never published – see “Lost gems of EC: the equilibrium genetic algorithm and the role of crossover” (DOI: 10.1145/1329465.1329468). Even more surprisingly, Georges Harik, Fernando Lobo, and David Golberg proposed a quite similar, yet completely unrelated, algorithm in the very same ICEC98: “The compact genetic algorithm” (DOI: 10.1109/ICEC.1998.700083). Comprehensive background information on estimation of distribution algorithms (EDAs) can be found in an introduction by Lobo et al. (DOI: 10.1007/978-3-662-43505-2_45).</p>
-<p>Since its appearance, the SG was demonstrated more robust than pure hill climbing, reasonably efficient, and quite easy to implement. It was immediately exploited by practitioners in many real-world applications, CAD problems; and by scholars for various test benches. Moreover, the SG framework enabled the inclusions of tricks that made it effective in quite a wider range of situations. The enhanced SG-Clans added to the basic SG a sort of recursive evolution, inspired by the concept of allopatric speciation, to escape local optima. Results were published in “Optimizing deceptive functions with the SG-Clans algorithm” (DOI: 10.1109/CEC.1999.785547). Non-binary encodings were eventually added in 2000s. Indeed, real-valued parameters was never included as they never worked properly, although a draft paper titled “A population-less evolutionary algorithm for real and integer optimization” mysteriously crawled its way up to semantic scholar.</p>
-<p>Over the years, the algorithm was reimplemented by different researchers in different languages, and a few brand new approaches derived from it (see Google Scholar’s up-to-date references). In 2016, Norharyati Md Ariff, Noor Elaiza Abdul Khalid, Rathiah Hashim, and Noorhayati Mohamed Noor published a comprehensive review on IOPScience (DOI: 10.1088/1757-899X/160/1/012098).</p>
-<div class="section" id="audience">
-<h2>Audience<a class="headerlink" href="#audience" title="Permalink to this headline">¶</a></h2>
-<p>The expected audience for SGX includes computer scientists, engineers and practitioners.</p>
-<ul class="simple">
-<li><p>SGX is available as a <a class="reference external" href="https://pypi.org/project/sgx/">PyPi package</a> and it can be easily installed using <a class="reference external" href="https://en.wikipedia.org/wiki/Pip_%28package_manager%29">pip</a>.</p></li>
-<li><p>The modular design allows scholars to exploit SGX for testing new ideas and novel algorithms.</p></li>
-</ul>
+  <div class="section" id="src-sgx-t-package">
+<h1>src.sgx.t package<a class="headerlink" href="#src-sgx-t-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -194,15 +179,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="instructions.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
