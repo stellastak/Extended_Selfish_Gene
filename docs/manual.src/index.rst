@@ -1,10 +1,6 @@
 Welcome to Extended Selfish Gene's documentation!
-=================================================
 
 
-"""""""""""""""""
-Table of Contents
-"""""""""""""""""
 
 | :ref:`genindex`
 
