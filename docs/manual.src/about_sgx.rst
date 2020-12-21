@@ -11,3 +11,11 @@ The base algorithm was later discovered surprisingly similar to the Equilibrium 
 Since its appearance, the SG was demonstrated more robust than pure hill climbing, reasonably efficient, and quite easy to implement. It was immediately exploited by practitioners in many real-world applications, CAD problems; and by scholars for various test benches. Moreover, the SG framework enabled the inclusions of tricks that made it effective in quite a wider range of situations. The enhanced SG-Clans added to the basic SG a sort of recursive evolution, inspired by the concept of allopatric speciation, to escape local optima. Results were published in "Optimizing deceptive functions with the SG-Clans algorithm" (DOI: 10.1109/CEC.1999.785547). Non-binary encodings were eventually added in 2000s. Indeed, real-valued parameters was never included as they never worked properly, although a draft paper titled "A population-less evolutionary algorithm for real and integer optimization" mysteriously crawled its way up to semantic scholar.
 
 Over the years, the algorithm was reimplemented by different researchers in different languages, and a few brand new approaches derived from it (see Google Scholar's up-to-date references). In 2016, Norharyati Md Ariff, Noor Elaiza Abdul Khalid, Rathiah Hashim, and Noorhayati Mohamed Noor published a comprehensive review on IOPScience (DOI: 10.1088/1757-899X/160/1/012098).
+
+Audience
+========
+
+The expected audience for SGX includes computer scientists, engineers and practitioners.
+
+* SGX is available as a `PyPi package <https://pypi.org/project/sgx/>`_ and it can be easily installed using `pip <https://en.wikipedia.org/wiki/Pip_%28package_manager%29>`_.
+* The modular design allows scholars to exploit SGX for testing new ideas and novel algorithms.
