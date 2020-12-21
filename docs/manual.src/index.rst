@@ -9,7 +9,7 @@ Table of Contents
 | :ref:`genindex`
 
 .. toctree::
-   :caption: Introduction
+   :caption: Contents
    :maxdepth: 1
 
    about_sgx.rst
