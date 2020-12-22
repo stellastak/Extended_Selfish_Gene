@@ -190,6 +190,60 @@
 <p>Additional sanity checks should be added to <cite>check_comparable</cite>. Subclasses may redefine the <cite>decorate</cite> method to
 change the values appearance.</p>
 <dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__eq__">
+<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is equal (==) to the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__ge__">
+<code class="sig-name descname">__ge__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__ge__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is greater or equal (&gt;=) to the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__gt__">
+<code class="sig-name descname">__gt__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__gt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is greater (&gt;) than the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__le__">
+<code class="sig-name descname">__le__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__le__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is less or equal (&lt;=) to the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__lshift__">
+<code class="sig-name descname">__lshift__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__lshift__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness does not dominates (&lt;&lt;) the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__lt__">
+<code class="sig-name descname">__lt__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__lt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is less (&lt;) than the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__ne__">
+<code class="sig-name descname">__ne__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__ne__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is not equal (!=) to the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__rshift__">
+<code class="sig-name descname">__rshift__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__rshift__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness dominates (&gt;&gt;) the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.check_comparable">
+<code class="sig-name descname">check_comparable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.base.Fitness.check_comparable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the fitness is able to be compared.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="sgx.fitness.base.Fitness.decorate">
 <code class="sig-name descname">decorate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#sgx.fitness.base.Fitness.decorate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent the individual fitness value with a nice string.</p>
@@ -216,34 +270,13 @@ change the values appearance.</p>
 <dl class="py method">
 <dt id="sgx.fitness.base.Fitness.is_valid">
 <code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fitness</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.is_valid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check an object against a specification.</p>
-<p>The function may be used to check a value against a parameter definition, a node against a section definition).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True if the object is valid, False otherwise</p>
-</dd>
-</dl>
+<dd><p>Returns True if the fitness is able to be compared, otherwise Raises an Assertion Error.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="sgx.fitness.base.Fitness.run_paranoia_checks">
 <code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check the internal consistency of a “paranoid” object.</p>
-<p>The function should be overridden by the sub-classes to implement the
-required, specific checks. It always returns <cite>True</cite>, but throws an
-exception whenever an inconsistency is detected.</p>
-<p><strong>Notez bien</strong>: Sanity checks may be computationally intensive,
-paranoia checks are not supposed to be used in production environments
-(i.e., when <cite>-O</cite> is used for compiling). Their typical usage is:
-<cite>assert foo.run_paranoia_checks()</cite></p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>True (always)</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>AssertionError if some internal data structure is incoherent</strong> – </p>
-</dd>
-</dl>
+<dd><p>Returns True if checks are successful.</p>
 </dd></dl>
 
 </dd></dl>

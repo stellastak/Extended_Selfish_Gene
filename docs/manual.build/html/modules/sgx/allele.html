@@ -177,12 +177,18 @@
 <span class="target" id="module-sgx.allele.base"></span><dl class="py class">
 <dt id="sgx.allele.base.Allele">
 <em class="property">class </em><code class="sig-prename descclassname">sgx.allele.base.</code><code class="sig-name descname">Allele</code><a class="headerlink" href="#sgx.allele.base.Allele" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract class for Allele/</p>
+<dd><p>Abstract class for Allele.</p>
 <p>An allele must be Hashable (ie. non modifiable)</p>
 <dl class="py method">
 <dt id="sgx.allele.base.Allele.describe">
 <em class="property">abstract </em><code class="sig-name descname">describe</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#sgx.allele.base.Allele.describe" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pretty describe the current allele</p>
+<dd><p>Pretty describes the current allele.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.base.Allele.mode">
+<em class="property">property </em><code class="sig-name descname">mode</code><a class="headerlink" href="#sgx.allele.base.Allele.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most frequent allele.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -195,10 +201,25 @@
 <dt id="sgx.allele.base.Allele.sample">
 <em class="property">abstract </em><code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample_type</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'sample'</span></em><span class="sig-paren">)</span> &#x2192; Hashable<a class="headerlink" href="#sgx.allele.base.Allele.sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sample.</p>
-<dl class="simple">
-<dt>sample_type:</dt><dd><p>‘sample’ (default): random value according to the current probability distribution
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sample_type</strong> – ‘sample’ (default): random value according to the current probability distribution
 ‘uniform’: random value according to a uniform probability distribution (ie. completely random)
 ‘mode’: most common value according to the current probability distribution</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.base.Allele.update">
+<em class="property">abstract </em><code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">winner</span><span class="p">:</span> <span class="n">Hashable</span></em>, <em class="sig-param"><span class="n">loser</span><span class="p">:</span> <span class="n">Hashable</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#sgx.allele.base.Allele.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the winner and the loser Genotype, so as to modify the new Learning Rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>winner</strong> – The genotype of the better solution.</p></li>
+<li><p><strong>loser</strong> – The genotype of the worse solution.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
