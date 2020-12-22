@@ -72,6 +72,11 @@ class Categorical(Allele):
         self._learning_rate = learning_rate
 
     def sample(self, sample_type: Optional[str] = Allele.DEFAULT_SAMPLE_TYPE) -> Hashable:
+        """Sample.
+
+        Args:
+            sample_type: The type of sample (sample (default), uniform, mode).
+        """
         if sample_type == Allele.SAMPLE_TYPE__SAMPLE:
             return SGxRandom.choice(self._alternatives, weights=self._weights)
         elif sample_type == Allele.SAMPLE_TYPE__UNIFORM:
@@ -82,6 +87,12 @@ class Categorical(Allele):
             assert sample_type in Allele.VALID_SAMPLE_TYPES, f"Unknown sample type: {sample_type!r} vs. {Allele.VALID_SAMPLE_TYPES}"
 
     def update(self, winner: Hashable, loser: Hashable) -> None:
+        """Updates the winner and the loser Genotype, so as to modify the new Learning Rate.
+
+        Args:
+            winner: The genotype of the better solution.
+            loser: The genotype of the worse solution.
+        """
         assert self.is_valid(winner), f"The winner must be a valid alternative: {winner!r} vs. {self._alternatives}"
         assert self.is_valid(loser), f"The loser must be a valid alternative: {loser!r} vs. {self._alternatives}"
         wi = self._alternatives.index(winner)
@@ -95,15 +106,19 @@ class Categorical(Allele):
 
     @property
     def possible_values(self) -> Optional[Tuple[str]]:
+        """Possible values of the allele. None if not reasonably applicable (eg. a float)"""
         return self._alternatives
 
     def describe(self) -> str:
+        """Pretty describes the current categorical allele."""
         return '｜'.join(f'{a!r}/{w:.2}' for a, w in zip(self._alternatives, self._weights))
 
     def is_valid(self, value: Hashable) -> bool:
+        """Checks if the allele is categorical."""
         return value in self._alternatives
 
     def run_paranoia_checks(self) -> bool:
+        """Returns True, if all tests are passed."""
         assert len(self._alternatives) == len(set(
             self._alternatives)), f"Alternatives must be uniques: {self._alternatives}"
         assert len(self._alternatives) == len(
