@@ -42,7 +42,15 @@ class Boolean(Allele):
 
     @staticmethod
     def sigmoid(x: float, k: Optional[float] = 1) -> float:
-        """Logistic function with given logistic growth (`k`). See https://en.wikipedia.org/wiki/Logistic_function"""
+        """Logistic function with given logistic growth (`k`). See https://en.wikipedia.org/wiki/Logistic_function
+
+        Args:
+            x: A float number.
+            k: Logistic Growth.
+
+        Returns:
+            The result probability of the sigmoid function.
+        """
         return 1 / (1 + exp(-k * x))
 
     def __init__(self, learning_rate: float = DEFAULT_LEARNING_RATE):
@@ -51,6 +59,11 @@ class Boolean(Allele):
         self._learning_rate = learning_rate
 
     def sample(self, sample_type: Optional[str] = Allele.DEFAULT_SAMPLE_TYPE) -> Hashable:
+        """Sample.
+
+        Args:
+            sample_type: The type of sample (sample (default), uniform, mode).
+        """
         if sample_type == Allele.SAMPLE_TYPE__SAMPLE:
             return SGxRandom.random() < Boolean.sigmoid(self._x, self._k)
         elif sample_type == Allele.SAMPLE_TYPE__UNIFORM:
@@ -61,6 +74,12 @@ class Boolean(Allele):
             assert sample_type in Allele.VALID_SAMPLE_TYPES, f"Unknown sample type: {sample_type!r} vs. {Allele.VALID_SAMPLE_TYPES}"
 
     def update(self, winner: Hashable, loser: Hashable) -> None:
+        """Updates the winner and the loser Genotype, so as to modify the new Learning Rate.
+
+        Args:
+            winner: The genotype of the better solution.
+            loser: The genotype of the worse solution.
+        """
         if winner and not loser:
             self._x += self._learning_rate
         elif not winner and loser:
@@ -68,10 +87,13 @@ class Boolean(Allele):
         assert self.run_paranoia_checks()
 
     def describe(self) -> str:
+        """Pretty describes the current boolean allele."""
         return f'{self._x:.e}>{Boolean.sigmoid(self._x, self._k):.2}'
 
     def is_valid(self, value: Hashable) -> bool:
+        """Checks if the allele is boolean."""
         return value in [True, False]
 
     def run_paranoia_checks(self) -> bool:
+        """Returns True, if all tests are passed."""
         return super().run_paranoia_checks()

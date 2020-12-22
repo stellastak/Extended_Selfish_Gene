@@ -55,17 +55,21 @@ class Approximate(Fitness, float):
         self._abs_tol = abs_tol
 
     def decorate(self) -> str:
+        """Represent the individual fitness value with a nice string."""
         return str(float(self)) + '≈'
 
     def is_distinguishable(self, other: 'Fitness') -> bool:
+        """Check whether some differences from the other Fitness may be perceived."""
         self.check_comparable(other)
         return not isclose(float(self), float(other), rel_tol=self._rel_tol, abs_tol=self._abs_tol)
 
     def is_fitter(self, other: 'Fitness') -> bool:
+        """Check whether fitter than the other."""
         self.check_comparable(other)
         return self != other and float(self) > float(other)
 
     def check_comparable(self, other: 'Approximate'):
+        """Checks if the fitness is able to be compared."""
         super().check_comparable(other)
         assert self._abs_tol == other._abs_tol, f"Can't is_fitter Fitness Floats with different absolute tolerance ({float(self)}±{self._abs_tol} vs. {float(other)}±{other._abs_tol})"
         assert self._rel_tol == other._rel_tol, f"Can't is_fitter Fitness Floats with different relative tolerance ({float(self)}±{self._rel_tol}r vs. {float(other)}±{other._rel_tol}r)"
@@ -93,10 +97,12 @@ class Vector(Fitness):
         self.run_paranoia_checks()
 
     def is_distinguishable(self, other: 'Vector') -> bool:
+        """Check whether some differences from the other Fitness may be perceived."""
         self.check_comparable(other)
         return any(e1 != e2 for e1, e2 in zip(self._values, other._values))
 
     def is_fitter(self, other: 'Fitness') -> bool:
+        """Check whether fitter than the other."""
         self.check_comparable(other)
         return Vector.compare_vectors(self._values, other._values) > 0
 
@@ -104,7 +110,13 @@ class Vector(Fitness):
     def compare_vectors(v1: Sequence[Fitness], v2: Sequence[Fitness]) -> int:
         """Compare Fitness values in v1 and v2.
 
-        Return -1 if v1 < v2; +1 if v1 > v2; 0 if v1 == v2"""
+        Args:
+            v1: The first fitness vector.
+            v2: The second fitness vector.
+
+        Returns:
+             -1 if v1 < v2; +1 if v1 > v2; 0 if v1 == v2
+        """
         for e1, e2 in zip(v1, v2):
             if e1 > e2:
                 return 1
@@ -113,9 +125,11 @@ class Vector(Fitness):
         return 0
 
     def decorate(self) -> str:
+        """Represent the individual fitness value with a nice string."""
         return ', '.join(e.decorate() for e in self._values)
 
     def check_comparable(self, other: 'Vector'):
+        """Checks if the fitness is able to be compared."""
         super().check_comparable(other)
         assert len(self._values) == len(
             other._values), f"Can't is_fitter Fitness Vectors of different size ({self} vs. {other})"

@@ -35,7 +35,7 @@ from ..utils import logging
 
 
 class Allele(Paranoid, Pedantic, ABC):
-    """Abstract class for Allele/
+    """Abstract class for Allele.
 
     An allele must be Hashable (ie. non modifiable)
     """
@@ -48,6 +48,7 @@ class Allele(Paranoid, Pedantic, ABC):
 
     @property
     def mode(self) -> Hashable:
+        """Returns the most frequent allele."""
         return self.sample(sample_type='mode')
 
     @property
@@ -59,20 +60,26 @@ class Allele(Paranoid, Pedantic, ABC):
     def sample(self, sample_type: Optional[str] = DEFAULT_SAMPLE_TYPE) -> Hashable:
         """Sample.
 
-        sample_type:
-            'sample' (default): random value according to the current probability distribution
-            'uniform': random value according to a uniform probability distribution (ie. completely random)
-            'mode': most common value according to the current probability distribution
+        Args:
+            sample_type: 'sample' (default): random value according to the current probability distribution
+                         'uniform': random value according to a uniform probability distribution (ie. completely random)
+                         'mode': most common value according to the current probability distribution
         """
         pass
 
     @abstractmethod
     def update(self, winner: Hashable, loser: Hashable) -> None:
+        """Updates the winner and the loser Genotype, so as to modify the new Learning Rate.
+
+        Args:
+            winner: The genotype of the better solution.
+            loser: The genotype of the worse solution.
+        """
         pass
 
     @abstractmethod
     def describe(self) -> str:
-        """Pretty describe the current allele"""
+        """Pretty describes the current allele."""
         return '*undef*'
 
     def __str__(self) -> str:

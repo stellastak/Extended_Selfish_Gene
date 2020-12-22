@@ -35,7 +35,7 @@ from .simple import Vector
 
 
 class MultiObjective(Vector, ABC):
-    """Abstract class for handling Molti-Objective problems."""
+    """Abstract class for handling Multi-Objective problems."""
 
     @abstractmethod
     def is_fitter(self, other: 'Lexicase') -> bool:

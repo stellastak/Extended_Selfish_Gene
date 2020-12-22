@@ -38,7 +38,7 @@ from ..utils import logging
 
 
 class FitnessFunction(abc.Callable):
-    #    def __init__(self, fitness_function: Callable[[Genotype], Fitness], type_: Optional[Fitness.__class__] = Scalar.__class__, best_fitness: Optional[Fitness] = None):
+    # def __init__(self, fitness_function: Callable[[Genotype], Fitness], type_: Optional[Fitness.__class__] = Scalar.__class__, best_fitness: Optional[Fitness] = None):
     def __init__(self,
                  fitness_function: Callable[[Genotype], Any],
                  type_: Optional[Type[Fitness]] = Type[Scalar],
@@ -51,9 +51,11 @@ class FitnessFunction(abc.Callable):
         return self._fitness_type(self._fitness_function(genotype))
 
     @property
-    def fitness_type(self):
+    def fitness_type(self) -> Type[Fitness]:
+        """Returns the Fitness Type."""
         return self._fitness_type
 
     @property
-    def best_fitness(self):
+    def best_fitness(self) -> Fitness:
+        """Returns the best fitness."""
         return self._best_fitness
