@@ -76,27 +76,35 @@ class Fitness(Pedantic, Paranoid):
     # FINAL/WARNINGS
 
     def __eq__(self, other: 'Fitness') -> bool:
+        """Returns True if one fitness is equal (==) to the other."""
         return not self.is_distinguishable(other)
 
     def __ne__(self, other: 'Fitness') -> bool:
+        """Returns True if one fitness is not equal (!=) to the other."""
         return self.is_distinguishable(other)
 
     def __gt__(self, other: 'Fitness') -> bool:
+        """Returns True if one fitness is greater (>) than the other."""
         return self.is_fitter(other)
 
     def __lt__(self, other: 'Fitness') -> bool:
+        """Returns True if one fitness is less (<) than the other."""
         return other.is_fitter(self)
 
     def __ge__(self, other: 'Fitness') -> bool:
+        """Returns True if one fitness is greater or equal (>=) to the other."""
         return not self.__lt__(other)
 
     def __le__(self, other: 'Fitness') -> bool:
+        """Returns True if one fitness is less or equal (<=) to the other."""
         return not self.__gt__(other)
 
     def __rshift__(self, other: 'Fitness') -> bool:
+        """Returns True if one fitness dominates (>>) the other."""
         return self.is_dominant(other)
 
     def __lshift__(self, other: 'Fitness') -> bool:
+        """Returns True if one fitness does not dominates (<<) the other."""
         return other.is_dominant(self)
 
     def __str__(self):
@@ -109,14 +117,17 @@ class Fitness(Pedantic, Paranoid):
         return super().__hash__()
 
     def check_comparable(self, other: 'Fitness'):
+        """Checks if the fitness is able to be compared."""
         assert isinstance(other, Fitness), f"Can't is_fitter a Fitness against a different type ({type(other)})"
         assert other.run_paranoia_checks()
         assert self.__class__ == other.__class__, f"Can't is_fitter Fitness values of different types ({type(self)} vs. {type(other)})"
 
     def run_paranoia_checks(self) -> bool:
+        """Returns True if checks are successful."""
         return super().run_paranoia_checks()
 
     def is_valid(self, fitness: 'Fitness') -> bool:
+        """Returns True if the fitness is able to be compared, otherwise Raises an Assertion Error."""
         try:
             self.check_comparable(fitness)
         except AssertionError:
@@ -126,8 +137,7 @@ class Fitness(Pedantic, Paranoid):
 
 def reversed(fitness_class: 'Fitness') -> 'Fitness':
     """Reverse fitness class turning a maximization problem into a minimization one."""
-    assert isinstance(
-        fitness_class,
+    assert isinstance(fitness_class,
         type), f"Only <class 'sgx.t.Fitness'> can be reversed. Found an object of type {type(fitness_class)}."
     assert issubclass(fitness_class, Fitness), f"Only <class 'sgx.t.Fitness'> can be reversed. Found {fitness_class}."
 
