@@ -60,6 +60,14 @@ class Species:
         return self._fitness_function
 
     def sample(self, sample_type: Optional[str] = Allele.DEFAULT_SAMPLE_TYPE) -> Genotype:
+        """Sampling the genotypes with a specific method.
+
+        Args:
+            sample_type: The type of sampling is going to be used.
+
+        Returns:
+            The candidate's Genotype after sampling.
+        """
         genotype = list()
         for a in self._genome:
             if SGxRandom.random() < self._mutation_rate:
@@ -69,8 +77,22 @@ class Species:
         return Genotype(genotype)
 
     def update(self, winner: Genotype, loser: Genotype):
+        """Updates the winner and the loser Genotype, so as to modify the new Learning Rate.
+
+        Args:
+            winner: The genotype of the better solution.
+            loser: The genotype of the worse solution.
+        """
         for a, w, l in zip(self._genome, winner, loser):
             a.update(winner=w, loser=l)
 
     def evaluate(self, genotype: Genotype) -> Fitness:
+        """Evaluates a genotype according to a specific Fitness Function.
+
+        Args:
+            genotype: The Genotype which is going to be evaluated.
+
+        Returns:
+            The fitness calculated from a Fitness Function.
+        """
         return self._fitness_function(genotype)

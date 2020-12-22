@@ -45,9 +45,19 @@ class Archive(Paranoid):
         self._age = 0
 
     def _add(self, genotype: Genotype, fitness: Fitness, generation: int) -> bool:
-        """Add a new solution to Archive, return True if really added."""
-        assert isinstance(
-            genotype, Genotype), f"Only <Genotype, Fitness> can be added to the archive (genotype: {type(genotype)})"
+        """Add a new solution to Archive.
+
+        Args:
+            genotype: The solution's genotype.
+            fitness: The solution's fitness.
+            generation: The number of generation of the individual.
+
+        Returns:
+            True if really added, False otherwise.
+        """
+
+        assert isinstance(genotype,
+                          Genotype), f"Only <Genotype, Fitness> can be added to the archive (genotype: {type(genotype)})"
         assert isinstance(fitness,
                           Fitness), f"Only <Genotype, Fitness> can be added to the archive (fitness: {type(fitness)})"
 
@@ -62,8 +72,16 @@ class Archive(Paranoid):
             self._archive = new_set
             return True
 
-    def add_generation(self, individuals: Sequence, generation: Optional[int] = None):
-        """Add the individuals of a generation"""
+    def add_generation(self, individuals: Sequence, generation: Optional[int] = None) -> bool:
+        """Add the individuals of a generation.
+
+        Args:
+            individuals: The sequence of individuals that are going to be added.
+            generation: The number of generation.
+
+        Returns:
+            True if succeeded to be added, False otherwise.
+        """
 
         if generation is None:
             self._age += 1
@@ -74,33 +92,41 @@ class Archive(Paranoid):
         return result
 
     @property
-    def items(self):
+    def items(self) -> list[set]:
+        """The list of archived individuals."""
         return list(self._archive)
 
     @property
-    def age(self):
+    def age(self) -> int:
+        """The current age of a generation."""
         return self._age
 
     @property
-    def last_improvement(self):
+    def last_improvement(self) -> int:
+        """The last generation added in archives."""
         return max(a for _, _, a in self._archive)
 
     @property
-    def first_improvement(self):
+    def first_improvement(self) -> int:
+        """The first generation added in archives."""
         return min(a for _, _, a in self._archive)
 
     def __iadd__(self, individuals) -> bool:
         """Add a set of individuals as a new generation."""
         return self.add_generation(individuals)
 
-    def __len__(self):
+    def __len__(self) -> int:
+        """The number of elements in an archive set."""
         return len(self._archive)
 
-    def __bool__(self):
+    def __bool__(self) -> bool:
+        """Returns True if an archive set is created."""
         return bool(self._archive)
 
-    def __iter__(self):
+    def __iter__(self) -> iter:
+        """Returns the current element of the archive set."""
         return iter([e for e in self._archive])
 
     def run_paranoia_checks(self) -> bool:
+        """Returns True if all the paranoia checks are passed."""
         return True

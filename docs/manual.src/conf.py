@@ -36,11 +36,16 @@ release = '0.0.3'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
+napoleon_include_special_with_doc = True
+napoleon_include_private_with_doc = True
+
 extensions = ['sphinx.ext.autosectionlabel',
               'sphinx.ext.autodoc',
               'sphinx.ext.coverage',
               'sphinx_rtd_theme',
-              'sphinx.ext.napoleon']
+              'sphinx.ext.napoleon',
+              'sphinx.ext.todo']
 
 source_suffix = ['.rst', '.md']
 

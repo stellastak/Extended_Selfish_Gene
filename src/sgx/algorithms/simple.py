@@ -55,7 +55,7 @@ TQDM_DEFAULT_OPTIONS = {
 
 def sg(species: species_.Species,
        max_generation: Optional[int] = None,
-       progress_bar: Optional[Union[str, bool]] = True):
+       progress_bar: Optional[Union[str, bool]] = True) -> Archive:
     """A vanilla optimizer
 
     The algorithm is described in the paper *A new evolutionary algorithm inspired by the selfish gene theory*

@@ -69,7 +69,7 @@ class Pedantic(ABC):
         The function may be used to check a value against a parameter definition, a node against a section definition).
 
         Returns:
-            True if the object is valid, False otherwise
+            True if the object is valid, False otherwise.
         """
         raise NotImplementedError("Abstract method not implemented")
 
@@ -81,13 +81,13 @@ class Genotype(tuple, Paranoid):
         super().__init__()
         assert self.run_paranoia_checks()
 
-    def squeeze(self):
+    def squeeze(self) -> str:
         return str.join('', [str(_) for _ in tuple(self)])
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"[{str.join(', ', [repr(_) for _ in tuple(self)])}]"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return object.__repr__(self)
 
     def run_paranoia_checks(self) -> bool:
@@ -102,11 +102,11 @@ class Genome(list, Pedantic, Paranoid):
         assert self.run_paranoia_checks()
         self._is_squeezable = all(a.is_squeezable for a in list(self))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return object.__repr__(self)
 
     @property
-    def is_squeezable(self):
+    def is_squeezable(self) -> bool:
         return self._is_squeezable
 
     def run_paranoia_checks(self) -> bool:
