@@ -5,37 +5,37 @@ Welcome to Extended Selfish Gene's documentation!
 
 .. toctree::
    :caption: Contents
-   :maxdepth: 1
+   :maxdepth: 4
 
    about_sgx.rst
    Developer repository <https://github.com/squillero/sgx>
 
 .. toctree::
    :caption: User Guide
-   :maxdepth: 2
+   :maxdepth: 4
 
    instructions.rst
-   class_organization.rst
    fitness.rst
 
 .. toctree::
    :caption: API reference
-   :maxdepth: 2
+   :maxdepth: 4
 
+   class_organization.rst
 
    modules/sgx/allele
    modules/sgx/fitness
 
 .. toctree::
    :caption: Copyright
-   :maxdepth: 1
+   :maxdepth: 4
 
    authors.rst
    license.rst
 
 .. toctree::
    :caption: Appendixes
-   :maxdepth: 1
+   :maxdepth: 4
 
    contributors.rst
 
