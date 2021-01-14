@@ -16,7 +16,6 @@ Welcome to Extended Selfish Gene's documentation!
    :maxdepth: 2
 
    instructions.rst
-   class_organization.rst
 
 
 .. toctree::
