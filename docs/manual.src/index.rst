@@ -2,7 +2,7 @@ Welcome to Extended Selfish Gene's documentation!
 
 
 
-| :ref:`genindex`
+| :ref:`Introduction`
 
 .. toctree::
    :caption: Contents
