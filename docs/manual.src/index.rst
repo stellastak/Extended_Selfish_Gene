@@ -1,7 +1,6 @@
 Welcome to Extended Selfish Gene's documentation!
 
 
-
 | :ref:`Introduction`
 
 .. toctree::
@@ -16,14 +15,13 @@ Welcome to Extended Selfish Gene's documentation!
    :maxdepth: 2
 
    instructions.rst
-
+   class_organization.rst
+   fitness.rst
 
 .. toctree::
    :caption: API reference
    :maxdepth: 2
 
-   class_organization.rst
-   fitness.rst
 
    modules/sgx/allele
    modules/sgx/fitness
