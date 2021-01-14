@@ -42,4 +42,4 @@ Welcome to Extended Selfish Gene's documentation!
 
    contributors.rst
 
-| :ref:`modindex`
+| :ref:`Credits`
