@@ -20,13 +20,13 @@ Welcome to Extended Selfish Gene's documentation!
 
 .. toctree::
    :caption: API reference
-   :maxdepth: 4
+   :maxdepth: 2
 
-    class_organization.rst
-    fitness.rst
+   class_organization.rst
+   fitness.rst
 
-    modules/sgx/allele
-    modules/sgx/fitness
+   modules/sgx/allele
+   modules/sgx/fitness
 
 .. toctree::
    :caption: Copyright
