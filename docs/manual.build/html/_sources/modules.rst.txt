@@ -1,7 +1,0 @@
-Extended_Selfish_Gene
-=====================
-
-.. toctree::
-   :maxdepth: 4
-
-   src

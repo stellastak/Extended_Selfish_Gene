@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; sgx </title>
+  <title>Installation &mdash; Extended Selfish Gene (SGX) </title>
   
 
   
@@ -40,7 +40,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Authors" href="authors.html" />
+    <link rel="next" title="Class Organization" href="class_organization.html" />
     <link rel="prev" title="What is SGX?" href="about_sgx.html" /> 
 </head>
 
@@ -55,7 +55,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> sgx
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Extended Selfish Gene (SGX)
           
 
           
@@ -92,14 +92,19 @@
               <p class="caption"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about_sgx.html">What is SGX?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_sgx.html#audience">Audience</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/squillero/sgx">Developer repository</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-code">Source Code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importance-of-foss">Importance of FOSS</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_organization.html">Class Organization</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Copyright</span></p>
 <ul>
@@ -124,7 +129,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sgx</a>
+          <a href="index.html">Extended Selfish Gene (SGX)</a>
         
       </nav>
 
@@ -185,11 +190,35 @@
 <p>Caveat: on some systems the package manager is <code class="docutils literal notranslate"><span class="pre">pip3</span></code>.</p>
 <div class="section" id="source-code">
 <h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p>This repo is only useful if one wants to hack the code.</p>
-<p>The default branch is always the more stable and the only one tested through Travis CI
-The experimental branches <code class="docutils literal notranslate"><span class="pre">exp/*</span></code> contain code and comments that some programmers may find disturbing — Viewers discretion advised
-Before trying to contribute read this paper and this style guide
-It may be wise to send Giovanni an email [&#64;] before digging into the project</p>
+<div class="section" id="importance-of-foss">
+<h3>Importance of FOSS<a class="headerlink" href="#importance-of-foss" title="Permalink to this headline">¶</a></h3>
+<p>Personal control, customizability and freedom:
+Users of FOSS benefit from the Four Essential Freedoms to make unrestricted use of,
+and to study, copy, modify, and redistribute such software with or without modification.
+If they would like to change the functionality of software they can bring about changes to the code and, if they wish,
+distribute such modified versions of the software or often − depending on the software’s decision making model and
+its other users − even push or request such changes to be made via updates to the original software.</p>
+<p>Privacy and security:
+Manufacturers of proprietary, closed-source software are sometimes pressured to building in backdoors or other covert,
+undesired features into their software. Instead of having to trust software vendors,
+users of FOSS can inspect and verify the source code themselves and can put trust on a community of volunteers and users.
+As proprietary code is typically hidden from public view, only the vendors themselves and hackers may be aware
+of any vulnerabilities in them while FOSS involves as many people as possible for exposing bugs quickly.</p>
+<p>Low costs or no costs:
+FOSS is often free of charge although donations are often encouraged.
+This also allows users to better test and compare software.</p>
+<p>Quality, collaboration and efficiency:
+FOSS allows for better collaboration among various parties and individuals with the goal
+of developing the most efficient software for its users or use-cases
+while proprietary software is typically meant to generate profits.
+Furthermore, in many cases more organizations and individuals contribute to such projects than to proprietary software.
+It has been shown that technical superiority is typically the primary reason why companies choose open source software.</p>
+<hr class="docutils" />
+<p>The default branch is always the more stable and the only one tested through Travis CI.
+The experimental branches <code class="docutils literal notranslate"><span class="pre">exp/*</span></code> contain code and comments that some programmers may find disturbing — Viewers discretion advised.
+Before trying to contribute read this paper and this style guide.
+It may be wise to send Giovanni an email [&#64;] before digging into the project.</p>
+</div>
 </div>
 </div>
 
@@ -201,7 +230,7 @@ It may be wise to send Giovanni an email [&#64;] before digging into the project
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="authors.html" class="btn btn-neutral float-right" title="Authors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="class_organization.html" class="btn btn-neutral float-right" title="Class Organization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="about_sgx.html" class="btn btn-neutral float-left" title="What is SGX?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
