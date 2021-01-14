@@ -26,7 +26,7 @@ release = sgx.__version__
 author = sgx.__author__
 
 copyright = '2020, Giovanni Squillero'
-author = 'Giovanni Squillero', 'Alberto Tonda'
+author = 'Giovanni Squillero, Alberto Tonda'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.3'
