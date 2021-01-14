@@ -23,9 +23,6 @@ Welcome to Extended Selfish Gene's documentation!
 
    class_organization.rst
 
-   modules/sgx/allele
-   modules/sgx/fitness
-
 .. toctree::
    :caption: Copyright
    :maxdepth: 4
