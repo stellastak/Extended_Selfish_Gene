@@ -22,6 +22,9 @@ Welcome to Extended Selfish Gene's documentation!
    :caption: API reference
    :maxdepth: 2
 
+    class_organization.rst
+    fitness.rst
+
     modules/sgx/allele
     modules/sgx/fitness
 
@@ -36,6 +39,6 @@ Welcome to Extended Selfish Gene's documentation!
    :caption: Appendixes
    :maxdepth: 1
 
-   contributors
+   contributors.rst
 
 | :ref:`modindex`

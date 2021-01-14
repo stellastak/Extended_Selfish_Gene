@@ -1,6 +1,5 @@
-""""""""""""
 What is SGX?
-""""""""""""
+============
 
 The Selfish Gene optimization algorithm (SG) is a population-less evolutionary algorithm loosely inspired by the interpretation of the Darwinian theory given by the English biologist Richard Dawkins and popularized as the Selfish Gene theory. It enables a user to efficiently find the list parameters, either discrete symbols or real numbers, that maximizes a given target function.
 
