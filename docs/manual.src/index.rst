@@ -20,7 +20,7 @@ Welcome to Extended Selfish Gene's documentation!
 
 .. toctree::
    :caption: API reference
-   :maxdepth: 2
+   :maxdepth: 4
 
     class_organization.rst
     fitness.rst
