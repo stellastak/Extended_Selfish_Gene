@@ -61,6 +61,9 @@ Fitness Function class
 :mod:`sgx.fitness.function`
 
 .. automodule:: sgx.fitness.function
+    :classes:
+    :methods:
+    :modules:
     :members:
 
 ---------------------------
@@ -101,12 +104,12 @@ CPU_time
 .. automodule:: sgx.utils.cpu_time
     :members:
 
-Jupiter Support
+Jupyter Support
 ===============
 
-:mod:`sgx.utils.jupiter_support`
+:mod:`sgx.utils.jupyter_support`
 
-.. automodule:: sgx.utils.jupiter_support
+.. automodule:: sgx.utils.jupyter_support
     :members:
 
 Logging
