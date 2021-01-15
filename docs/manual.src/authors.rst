@@ -11,7 +11,9 @@ Authors
 
 `Alberto Tonda <https://scholar.google.it/citations?user=M1t5hwYAAAAJ&hl=en/>`_
 -------------------------------------------------------------------------------
-| INRAE
-| Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement
-| Paris
-| E-mail: alberto.tonda@gmail.com
+| Génie et Microbiologie des Procédés Alimentaires (GMPA)
+| French National Institute for Agricultural Research
+| AgroParisTech, Université Paris-Saclay
+| 1 av. Brétignières
+| 78850 Thiverval-Grignon — France
+| E-mail: alberto.tonda@inra.f
