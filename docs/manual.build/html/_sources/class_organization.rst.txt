@@ -128,7 +128,6 @@ Random class
 .. automodule:: sgx.utils.random
     :members:
 
----------------------
 
 Archive class
 =============
@@ -156,12 +155,12 @@ Species class
 
 ----------------------
 
-""""""""""""""
-SGX Algorithms
-""""""""""""""
+"""""""""""""
+SGX Algorithm
+"""""""""""""
 
 .. toctree::
-    :caption: Algorithms
+    :caption: Algorithm
     :maxdepth: 4
 
 

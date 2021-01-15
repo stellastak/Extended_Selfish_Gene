@@ -24,6 +24,7 @@ Importance of FOSS
 ------------------
 
 Personal control, customizability and freedom:
+
 Users of FOSS benefit from the Four Essential Freedoms to make unrestricted use of,
 and to study, copy, modify, and redistribute such software with or without modification.
 If they would like to change the functionality of software they can bring about changes to the code and, if they wish,
@@ -31,6 +32,7 @@ distribute such modified versions of the software or often − depending on the 
 its other users − even push or request such changes to be made via updates to the original software.
 
 Privacy and security:
+
 Manufacturers of proprietary, closed-source software are sometimes pressured to building in backdoors or other covert,
 undesired features into their software. Instead of having to trust software vendors,
 users of FOSS can inspect and verify the source code themselves and can put trust on a community of volunteers and users.
@@ -38,10 +40,12 @@ As proprietary code is typically hidden from public view, only the vendors thems
 of any vulnerabilities in them while FOSS involves as many people as possible for exposing bugs quickly.
 
 Low costs or no costs:
+
 FOSS is often free of charge although donations are often encouraged.
 This also allows users to better test and compare software.
 
 Quality, collaboration and efficiency:
+
 FOSS allows for better collaboration among various parties and individuals with the goal
 of developing the most efficient software for its users or use-cases
 while proprietary software is typically meant to generate profits.
