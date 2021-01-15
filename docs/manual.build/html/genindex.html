@@ -103,6 +103,8 @@
 <li class="toctree-l1"><a class="reference internal" href="class_organization.html">Class Organization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="class_organization.html#allele">Allele</a></li>
 <li class="toctree-l1"><a class="reference internal" href="class_organization.html#fitness">Fitness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_organization.html#utils">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_organization.html#sgx-algorithms">SGX Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="class_organization.html#modular-design-rationale">Modular Design Rationale</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Copyright</span></p>
@@ -185,7 +187,9 @@
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
@@ -284,10 +288,30 @@
   </ul></td>
 </tr></table>
 
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="class_organization.html#sgx.species.Species.evaluate">evaluate() (sgx.species.Species method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="class_organization.html#sgx.fitness.base.Fitness">Fitness (class in sgx.fitness.base)</a>, <a href="modules/sgx/fitness.html#sgx.fitness.base.Fitness">[1]</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="class_organization.html#sgx.base.Genome">Genome (class in sgx.base)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="class_organization.html#sgx.base.Genotype">Genotype (class in sgx.base)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -330,6 +354,10 @@
       <ul>
         <li><a href="class_organization.html#sgx.allele.categorical.Categorical.is_valid">(sgx.allele.categorical.Categorical method)</a>
 </li>
+        <li><a href="class_organization.html#sgx.base.Genome.is_valid">(sgx.base.Genome method)</a>
+</li>
+        <li><a href="class_organization.html#sgx.base.Pedantic.is_valid">(sgx.base.Pedantic method)</a>
+</li>
         <li><a href="class_organization.html#sgx.fitness.base.Fitness.is_valid">(sgx.fitness.base.Fitness method)</a>, <a href="modules/sgx/fitness.html#sgx.fitness.base.Fitness.is_valid">[1]</a>
 </li>
       </ul></li>
@@ -340,6 +368,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="class_organization.html#sgx.fitness.multi_objective.Lexicase">Lexicase (class in sgx.fitness.multi_objective)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="class_organization.html#sgx.utils.logging.log_cpu">log_cpu() (in module sgx.utils.logging)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -359,6 +391,8 @@
 </li>
         <li><a href="class_organization.html#module-sgx.allele.categorical">sgx.allele.categorical</a>
 </li>
+        <li><a href="class_organization.html#module-sgx.base">sgx.base</a>
+</li>
         <li><a href="class_organization.html#module-sgx.fitness.base">sgx.fitness.base</a>, <a href="modules/sgx/fitness.html#module-sgx.fitness.base">[1]</a>
 </li>
         <li><a href="class_organization.html#module-sgx.fitness.function">sgx.fitness.function</a>
@@ -366,6 +400,14 @@
         <li><a href="class_organization.html#module-sgx.fitness.multi_objective">sgx.fitness.multi_objective</a>
 </li>
         <li><a href="class_organization.html#module-sgx.fitness.simple">sgx.fitness.simple</a>
+</li>
+        <li><a href="class_organization.html#module-sgx.species">sgx.species</a>
+</li>
+        <li><a href="class_organization.html#module-sgx.utils.cpu_time">sgx.utils.cpu_time</a>
+</li>
+        <li><a href="class_organization.html#module-sgx.utils.logging">sgx.utils.logging</a>
+</li>
+        <li><a href="class_organization.html#module-sgx.utils.random">sgx.utils.random</a>
 </li>
       </ul></li>
   </ul></td>
@@ -377,6 +419,12 @@
 
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="class_organization.html#sgx.base.Paranoid">Paranoid (class in sgx.base)</a>
+</li>
+      <li><a href="class_organization.html#sgx.base.Pedantic">Pedantic (class in sgx.base)</a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="class_organization.html#sgx.allele.base.Allele.possible_values">possible_values() (sgx.allele.base.Allele property)</a>, <a href="modules/sgx/allele.html#sgx.allele.base.Allele.possible_values">[1]</a>
 
@@ -397,6 +445,12 @@
       <ul>
         <li><a href="class_organization.html#sgx.allele.categorical.Categorical.run_paranoia_checks">(sgx.allele.categorical.Categorical method)</a>
 </li>
+        <li><a href="class_organization.html#sgx.base.Genome.run_paranoia_checks">(sgx.base.Genome method)</a>
+</li>
+        <li><a href="class_organization.html#sgx.base.Genotype.run_paranoia_checks">(sgx.base.Genotype method)</a>
+</li>
+        <li><a href="class_organization.html#sgx.base.Paranoid.run_paranoia_checks">(sgx.base.Paranoid method)</a>
+</li>
         <li><a href="class_organization.html#sgx.fitness.base.Fitness.run_paranoia_checks">(sgx.fitness.base.Fitness method)</a>, <a href="modules/sgx/fitness.html#sgx.fitness.base.Fitness.run_paranoia_checks">[1]</a>
 </li>
       </ul></li>
@@ -412,6 +466,8 @@
         <li><a href="class_organization.html#sgx.allele.boolean.Boolean.sample">(sgx.allele.boolean.Boolean method)</a>
 </li>
         <li><a href="class_organization.html#sgx.allele.categorical.Categorical.sample">(sgx.allele.categorical.Categorical method)</a>
+</li>
+        <li><a href="class_organization.html#sgx.species.Species.sample">(sgx.species.Species method)</a>
 </li>
       </ul></li>
       <li><a href="class_organization.html#sgx.fitness.simple.Scalar">Scalar (class in sgx.fitness.simple)</a>
@@ -437,8 +493,13 @@
         <li><a href="class_organization.html#module-sgx.allele.categorical">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    sgx.base
+
+      <ul>
+        <li><a href="class_organization.html#module-sgx.base">module</a>
+</li>
+      </ul></li>
       <li>
     sgx.fitness.base
 
@@ -446,6 +507,8 @@
         <li><a href="class_organization.html#module-sgx.fitness.base">module</a>, <a href="modules/sgx/fitness.html#module-sgx.fitness.base">[1]</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     sgx.fitness.function
 
@@ -467,7 +530,37 @@
         <li><a href="class_organization.html#module-sgx.fitness.simple">module</a>
 </li>
       </ul></li>
+      <li>
+    sgx.species
+
+      <ul>
+        <li><a href="class_organization.html#module-sgx.species">module</a>
+</li>
+      </ul></li>
+      <li>
+    sgx.utils.cpu_time
+
+      <ul>
+        <li><a href="class_organization.html#module-sgx.utils.cpu_time">module</a>
+</li>
+      </ul></li>
+      <li>
+    sgx.utils.logging
+
+      <ul>
+        <li><a href="class_organization.html#module-sgx.utils.logging">module</a>
+</li>
+      </ul></li>
+      <li>
+    sgx.utils.random
+
+      <ul>
+        <li><a href="class_organization.html#module-sgx.utils.random">module</a>
+</li>
+      </ul></li>
       <li><a href="class_organization.html#sgx.allele.boolean.Boolean.sigmoid">sigmoid() (sgx.allele.boolean.Boolean static method)</a>
+</li>
+      <li><a href="class_organization.html#sgx.species.Species">Species (class in sgx.species)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -481,6 +574,8 @@
         <li><a href="class_organization.html#sgx.allele.boolean.Boolean.update">(sgx.allele.boolean.Boolean method)</a>
 </li>
         <li><a href="class_organization.html#sgx.allele.categorical.Categorical.update">(sgx.allele.categorical.Categorical method)</a>
+</li>
+        <li><a href="class_organization.html#sgx.species.Species.update">(sgx.species.Species method)</a>
 </li>
       </ul></li>
   </ul></td>

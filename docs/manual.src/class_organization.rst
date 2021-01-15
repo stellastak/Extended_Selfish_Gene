@@ -76,11 +76,98 @@ Multi-Objective class
 ----------------------------
 
 Simple class
-==================
+============
 
 :mod:`sgx.fitness.simple`
 
 .. automodule:: sgx.fitness.simple
+    :members:
+
+-------------------------
+
+"""""
+Utils
+"""""
+
+.. toctree::
+    :caption: Utils
+    :maxdepth: 4
+
+CPU_time
+========
+
+:mod:`sgx.utils.cpu_time`
+
+.. automodule:: sgx.utils.cpu_time
+    :members:
+
+Jupiter Support
+===============
+
+:mod:`sgx.utils.jupiter_support`
+
+.. automodule:: sgx.utils.jupiter_support
+    :members:
+
+Logging
+=======
+
+:mod:`sgx.utils.logging`
+
+.. automodule:: sgx.utils.logging
+    :members:
+
+Random class
+============
+
+:mod:`sgx.utils.random`
+
+.. automodule:: sgx.utils.random
+    :members:
+
+---------------------
+
+Archive class
+=============
+
+:mod:`sgx.archive`
+
+.. automodule:: sgx.archive
+    :members:
+
+Base class
+==========
+
+:mod:`sgx.base`
+
+.. automodule:: sgx.base
+    :members:
+
+Species class
+=============
+
+:mod:`sgx.species`
+
+.. automodule:: sgx.species
+    :members:
+
+----------------------
+
+""""""""""""""
+SGX Algorithms
+""""""""""""""
+
+.. toctree::
+    :caption: Algorithms
+    :maxdepth: 4
+
+
+Simple Algorithm class
+======================
+
+:mod:`sgx.algorithms.simple`
+
+.. automodule:: sgx.algorithms.simple
     :members:
 
 -------------------------
