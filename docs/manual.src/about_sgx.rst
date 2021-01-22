@@ -47,8 +47,7 @@ includes computer scientists, engineers and practitioners.
 * It is a real, industrial application where fitness function is computationally intensive.
 * Real-time application.
 * SGX also provides an easy-to-use and standard interface.
-* The code is parallelizable, which means that it can run in parallel multiple threads.
-There is no need to wait for everything to be completed. Some implementations might be Embarrassingly parallel
+* The code is parallelizable, which means that it can run in parallel multiple threads. There is no need to wait for everything to be completed. Some implementations might be Embarrassingly parallel
 (see `<https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_).
 * SGX is available as a `PyPi package <https://pypi.org/project/sgx/>`_ and it can be easily installed using
 `pip <https://en.wikipedia.org/wiki/Pip_%28package_manager%29>`_.
