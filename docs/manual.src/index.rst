@@ -37,4 +37,4 @@ Welcome to Extended Selfish Gene's documentation!
    contributors.rst
    terminology.rst
 
-| :ref:`Credits`
+| :ref:`.`
