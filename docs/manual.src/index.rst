@@ -35,5 +35,6 @@ Welcome to Extended Selfish Gene's documentation!
    :maxdepth: 4
 
    contributors.rst
+   terminology.rst
 
 | :ref:`Credits`
