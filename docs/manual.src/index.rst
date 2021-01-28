@@ -6,7 +6,6 @@
 
 .. toctree::
    :caption: Introduction
-   :name: Introduction
    :maxdepth: 4
 
    about_sgx.rst
