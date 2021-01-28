@@ -3,8 +3,7 @@
 .. toctree::
    :glob:
 
-   intro
-   Chapter1 description <chapter1>
+   about_sgx <about_sgx>
 
 .. toctree::
    :caption: Introduction
