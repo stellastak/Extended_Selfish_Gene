@@ -1,13 +1,14 @@
 **Welcome to Extended Selfish Gene's documentation!**
 
 .. toctree::
-   :caption: OK?
+   :caption: Contents
    :glob:
 
    about_sgx <about_sgx>
 
 .. toctree::
    :caption: Introduction
+   :name: Introduction
    :maxdepth: 4
 
    about_sgx.rst
