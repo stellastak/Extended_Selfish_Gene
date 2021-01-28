@@ -134,7 +134,7 @@ Archive class
 
 :mod:`sgx.archive`
 
-.. automodule:: sgx.archive
+.. automodule:: archive
     :members:
 
 Base class
