@@ -1,6 +1,7 @@
 **Welcome to Extended Selfish Gene's documentation!**
 
 .. toctree::
+   :caption: OK?
    :glob:
 
    about_sgx <about_sgx>
