@@ -65,7 +65,7 @@ html_title = f"{sgx.__name__} "
 html_short_title = f"The Extended Selfish Gene{sgx.__version__}"
 html_show_copyright = False
 html_show_sphinx = True
-html_theme = 'agogo'
+html_theme = 'sphinx_rtd_theme'
 
 html_logo = '../images/logo/tran_dna.png'
 html_favicon = '../images/icons/favicon.png'

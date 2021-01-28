@@ -1,8 +1,5 @@
 Welcome to Extended Selfish Gene's documentation!
 
-
-| :ref:`Introduction`
-
 .. toctree::
    :caption: Contents
    :maxdepth: 4
@@ -36,5 +33,3 @@ Welcome to Extended Selfish Gene's documentation!
 
    contributors.rst
    terminology.rst
-
-| :ref:`.`
