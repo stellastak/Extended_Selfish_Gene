@@ -117,6 +117,7 @@
 <p class="caption"><span class="caption-text">Appendixes</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Appendix - Terms</a></li>
 </ul>
 
             
@@ -182,24 +183,53 @@
             
   <div class="section" id="what-is-sgx">
 <h1>What is SGX?<a class="headerlink" href="#what-is-sgx" title="Permalink to this headline">¶</a></h1>
-<p>The Selfish Gene optimization algorithm (SG) is a population-less evolutionary algorithm loosely inspired by the interpretation of the Darwinian theory given by the English biologist Richard Dawkins and popularized as the Selfish Gene theory. It enables a user to efficiently find the list parameters, either discrete symbols or real numbers, that maximizes a given target function.</p>
-<p>The original SG was an almost straightforward implementation of a though experiment, only able to handle binary values; it was published in SAC98 as “The selfish gene algorithm: a new evolutionary optimization strategy” (DOI: 10.1145/330560.330838) and few month later, with some modifications, in ICEC98 as “A new evolutionary algorithm inspired by the selfish gene theory” (DOI: 10.1109/ICEC.1998.700092).</p>
-<p>The base algorithm was later discovered surprisingly similar to the Equilibrium Genetic Algorithm, developed by Ari Juels, Shumeet Baluja, and Alistair Sinclair in 1993 and never published – see “Lost gems of EC: the equilibrium genetic algorithm and the role of crossover” (DOI: 10.1145/1329465.1329468). Even more surprisingly, Georges Harik, Fernando Lobo, and David Golberg proposed a quite similar, yet completely unrelated, algorithm in the very same ICEC98: “The compact genetic algorithm” (DOI: 10.1109/ICEC.1998.700083). Comprehensive background information on estimation of distribution algorithms (EDAs) can be found in an introduction by Lobo et al. (DOI: 10.1007/978-3-662-43505-2_45).</p>
-<p>Since its appearance, the SG was demonstrated more robust than pure hill climbing, reasonably efficient, and quite easy to implement. It was immediately exploited by practitioners in many real-world applications, CAD problems; and by scholars for various test benches. Moreover, the SG framework enabled the inclusions of tricks that made it effective in quite a wider range of situations. The enhanced SG-Clans added to the basic SG a sort of recursive evolution, inspired by the concept of allopatric speciation, to escape local optima. Results were published in “Optimizing deceptive functions with the SG-Clans algorithm” (DOI: 10.1109/CEC.1999.785547). Non-binary encodings were eventually added in 2000s. Indeed, real-valued parameters was never included as they never worked properly, although a draft paper titled “A population-less evolutionary algorithm for real and integer optimization” mysteriously crawled its way up to semantic scholar.</p>
-<p>Over the years, the algorithm was reimplemented by different researchers in different languages, and a few brand new approaches derived from it (see Google Scholar’s up-to-date references). In 2016, Norharyati Md Ariff, Noor Elaiza Abdul Khalid, Rathiah Hashim, and Noorhayati Mohamed Noor published a comprehensive review on IOPScience (DOI: 10.1088/1757-899X/160/1/012098).</p>
+<p>The Selfish Gene optimization algorithm (SG) is a population-less evolutionary algorithm
+loosely inspired by the interpretation of the Darwinian theory given by the English
+biologist Richard Dawkins and popularized as the Selfish Gene theory.
+It enables a user to efficiently find the list parameters, either discrete symbols
+or real numbers, that maximizes a given target function.</p>
+<p>The original SG was an almost straightforward implementation of a though experiment,
+only able to handle binary values; it was published in SAC98 as
+<a class="reference external" href="https://doi.org/10.1145/330560.330838">“The selfish gene algorithm: a new evolutionary optimization strategy” (F. Corno, M.S. Reorda, G. Squillero, 1998)</a>
+and few month later, with some modifications, in ICEC98 as
+<a class="reference external" href="https://ieeexplore.ieee.org/document/700092">“A new evolutionary algorithm inspired by the selfish gene theory” (F. Corno, M.S. Reorda, G. Squillero, 1998)</a>.
+The base algorithm was later discovered surprisingly similar to the Equilibrium Genetic Algorithm,
+developed by Ari Juels, Shumeet Baluja, and Alistair Sinclair in 1993 and never published
+– see <a class="reference external" href="https://doi.org/10.1145/1329465.1329468">“Lost gems of EC: the equilibrium genetic algorithm and the role of crossover” (Fernando G. Lobo, 2007)</a>.
+Even more surprisingly, Georges Harik, Fernando Lobo, and David Golberg proposed a quite similar,
+yet completely unrelated, algorithm in the very same ICEC98: <a class="reference external" href="https://ieeexplore.ieee.org/document/700083">“The Compact Genetic Algorithm”
+(G.R. Harik, F.G. Lobo, D.E. Goldberg, 1998)</a>.
+Comprehensive background information on <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-662-43505-2_45">“Estimation of Distribution Algorithms (EDAs) (Martin Pelikan, Mark W. Hauschild, Fernando G. Lobo, 2015)</a>
+can be found in an introduction by Lobo et al.</p>
+<p>Since its appearance, the SG was demonstrated more robust than pure hill climbing,
+reasonably efficient, and quite easy to implement. It was immediately exploited by practitioners
+in many real-world applications, CAD problems; and by scholars for various test benches.
+Moreover, the SG framework enabled the inclusions of tricks that made it effective in quite
+a wider range of situations. The enhanced SG-Clans added to the basic SG a sort of recursive
+evolution, inspired by the concept of allopatric speciation, to escape local optima.
+Results were published in <a class="reference external" href="https://ieeexplore.ieee.org/document/785547">“Optimizing deceptive functions with the SG-Clans algorithm” (F. Corno, M.S. Reorda, G. Squillero, 1999)</a>.
+Non-binary encodings were eventually added in 2000s. Indeed, real-valued parameters was never included as
+they never worked properly, although a draft paper titled “A population-less evolutionary algorithm
+for real and integer optimization” mysteriously crawled its way up to semantic scholar.</p>
+<p>Over the years, the algorithm was reimplemented by different researchers in different languages,
+and a few brand new approaches derived from it (see Google Scholar’s up-to-date references).
+In 2016, a comprehensive review was published on IOPScience <a class="reference external" href="https://iopscience.iop.org/article/10.1088/1757-899X/160/1/012098/pdf">“Selfish Gene Algorithm Vs Genetic Algorithm: A Review” (Ariff, Norharyati Md, Khalid, Noor Elaiza Abdul, Hashim, Rathiah, Noor, Noorhayati Mohamed, 2016)</a>.</p>
 </div>
 <div class="section" id="audience">
 <h1>Audience<a class="headerlink" href="#audience" title="Permalink to this headline">¶</a></h1>
-<p>The expected audience for SGX, a ‘Quick n’ Dirty’ numerical optimization, includes computer scientists, engineers and practitioners.</p>
+<p>The expected audience for SGX, a ‘Quick n’ Dirty’ numerical optimization,
+includes computer scientists, engineers and practitioners.</p>
 <ul class="simple">
 <li><p>This evolutionary algorithm provides a Sub-Optimal result, which is better than a “hill-climbing” algorithm.</p></li>
 <li><p>It is a real, industrial application where fitness function is computationally intensive.</p></li>
 <li><p>Real-time application.</p></li>
 <li><p>SGX also provides an easy-to-use and standard interface.</p></li>
-<li><p>Parallelizable</p></li>
-<li><p>SGX is available as a <a class="reference external" href="https://pypi.org/project/sgx/">PyPi package</a> and it can be easily installed using <a class="reference external" href="https://en.wikipedia.org/wiki/Pip_%28package_manager%29">pip</a>.</p></li>
-<li><p>The modular design allows scholars to extend SGX for custom application.</p></li>
+<li><p>The code is parallelizable, which means that it can run in parallel multiple threads. There is no need to wait for everything to be completed. Some implementations might be Embarrassingly parallel</p></li>
 </ul>
+<p>(see <a class="reference external" href="https://en.wikipedia.org/wiki/Embarrassingly_parallel">https://en.wikipedia.org/wiki/Embarrassingly_parallel</a>).
+* SGX is available as a <a class="reference external" href="https://pypi.org/project/sgx/">PyPi package</a> and it can be easily installed using
+<a class="reference external" href="https://en.wikipedia.org/wiki/Pip_%28package_manager%29">pip</a>.
+* The modular design allows scholars to extend SGX for custom application.</p>
 </div>
 
 

@@ -120,6 +120,7 @@
 <p class="caption"><span class="caption-text">Appendixes</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Appendix - Terms</a></li>
 </ul>
 
             
@@ -185,10 +186,32 @@
             
   <div class="section" id="fitness">
 <h1>Fitness<a class="headerlink" href="#fitness" title="Permalink to this headline">¶</a></h1>
-<p>..fintess..?</p>
+<p>Fitness class also redefines the relational operator in order to handle different types of optimization
+(eg. maximization, minimization) and to provide limited support to more complex scenarios
+(eg. multi-objective optimization).</p>
 <div class="section" id="how-do-we-handle-a-different-scenario-including-moea">
 <h2>How do we handle a different scenario (including MOEA)<a class="headerlink" href="#how-do-we-handle-a-different-scenario-including-moea" title="Permalink to this headline">¶</a></h2>
-<p>….?</p>
+<p>When subclassing, one’s fitness should only redefine ‘is_fitter’, and optionally ‘is_distinguishable’ and ‘is_dominant’;
+‘is_dominant’ must be changed if ‘is_fitter’ is randomized (the result is uncertain).</p>
+<p>The idea of several, different scenarios is the following:</p>
+<p><cite>a == b</cite>
+In this case, fitness <cite>a</cite> cannot be distinguished from fitness <cite>b</cite>.</p>
+<p><cite>a != b</cite>
+In this case, fitness <cite>a</cite> is distinguishable from fitness <cite>b</cite>.</p>
+<p><cite>a &gt; b</cite>
+In this case, fitness <cite>a</cite> is fitter than fitness <cite>b</cite>.
+(may not always be the case, see lexicographic)</p>
+<p><cite>a &gt;= b</cite>
+In this case, fitness <cite>a</cite> is fitter or not distinguishable from fitness <cite>b</cite>.</p>
+<p><cite>a &lt; b</cite>
+In this case, fitness <cite>b</cite> is fitter than fitness <cite>a</cite>, respectively.
+(may not always be the case, see lexicographic)</p>
+<p><cite>a &lt;= b</cite>
+In this case, fitness <cite>b</cite> is fitter or not distinguishable from fitness <cite>a</cite>, respectively.</p>
+<p><cite>a &gt;&gt; b</cite>
+In this case, fitness <cite>a</cite> dominates fitness <cite>b</cite> which is a certain case.</p>
+<p><cite>a &lt;&lt; b</cite>
+In this case, fitness <cite>a</cite> is dominated by fitness <cite>b</cite>, accordingly.</p>
 </div>
 </div>
 

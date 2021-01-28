@@ -13,13 +13,13 @@ Authors
 -------------------------------------------------------------------------------
 | Génie et Microbiologie des Procédés Alimentaires (GMPA)
 | French National Institute for Agricultural Research
-| AgroParisTech, Université Paris-Saclay
+| AgroParisTech, Université Paris - Saclay
 | 1 av. Brétignières
 | 78850 Thiverval-Grignon --- France
-| E-mail: alberto.tonda@inra.f
+| E-mail: alberto.tonda@inrae.fr
 
 `Stella Stakiadi <https://github.com/stellastak/>`_
--------------------------------------------------------------------
+---------------------------------------------------
 | Politecnico di Torino
 | Department of Control and Computer Engineering
 | Corso Duca degli Abruzzi 24

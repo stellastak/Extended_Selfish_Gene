@@ -1,15 +1,12 @@
 # Configuration file for the Sphinx documentation builder.
-#
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
-
 # -- Path setup --------------------------------------------------------------
-
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
+
 import os
 import sys
 import time
@@ -24,9 +21,10 @@ import sgx
 project = sgx.__name__
 release = sgx.__version__
 author = sgx.__author__
+title = 'The Extended Selfish Gene'
 
-copyright = '2020, Giovanni Squillero'
-author = 'Giovanni Squillero, Alberto Tonda'
+copyright = '2021, Giovanni Squillero'
+author = 'Giovanni Squillero, Alberto Tonda, Stella Stakiadi'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.3'
@@ -50,7 +48,7 @@ extensions = ['sphinx.ext.autosectionlabel',
 source_suffix = ['.rst', '.md']
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['gettext']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
