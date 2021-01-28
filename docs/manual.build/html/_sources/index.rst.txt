@@ -5,11 +5,10 @@
    :glob:
 
 .. toctree::
-   :caption: Introduction
+   :caption: About Sgx
    :maxdepth: 4
 
    about_sgx.rst
-   audience.rst
    Developer repository <https://github.com/squillero/sgx>
 
 .. toctree::
