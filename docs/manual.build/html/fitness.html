@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Fitness &mdash; Extended Selfish Gene (SGX) </title>
+  <title>Fitness &mdash; The Extended Selfish Gene</title>
   
 
   
@@ -55,7 +55,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Extended Selfish Gene (SGX)
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> The Extended Selfish Gene
           
 
           
@@ -66,6 +66,10 @@
 
           
             
+            
+              <div class="version">
+                1.0
+              </div>
             
           
 
@@ -89,28 +93,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="about_sgx.html">What is SGX?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about_sgx.html#audience">Audience</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/squillero/sgx">Developer repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instructions.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Fitness</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-do-we-handle-a-different-scenario-including-moea">How do we handle a different scenario (including MOEA)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="class_organization.html">Class Organization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_organization.html#allele">Allele</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_organization.html#fitness">Fitness</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_organization.html#utils">Utils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_organization.html#sgx-algorithm">SGX Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="class_organization.html#modular-design-rationale">Modular Design Rationale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributors.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Appendix - Terms</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Introduction</span></p>
+              <p class="caption"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about_sgx.html">What is SGX?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_sgx.html#audience">Audience</a></li>
@@ -157,7 +140,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Extended Selfish Gene (SGX)</a>
+          <a href="index.html">The Extended Selfish Gene</a>
         
       </nav>
 
@@ -216,23 +199,23 @@
 ‘is_dominant’ must be changed if ‘is_fitter’ is randomized (the result is uncertain).</p>
 <p>The idea of several, different scenarios is the following:</p>
 <p><strong>`a == b`</strong>
-In this case, fitness <cite>a</cite> cannot be distinguished from fitness <cite>b</cite>.</p>
+In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code> cannot be distinguished from fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <p><strong>`a != b`</strong>
-In this case, fitness <cite>a</cite> is distinguishable from fitness <cite>b</cite>.</p>
+In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code> is distinguishable from fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <p><strong>`a &gt; b`</strong>
-In this case, fitness <cite>a</cite> is fitter than fitness <cite>b</cite>.
+In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code> is fitter than fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code>.
 (may not always be the case, see lexicographic)</p>
 <p><strong>`a &gt;= b`</strong>
-In this case, fitness <cite>a</cite> is fitter or not distinguishable from fitness <cite>b</cite>.</p>
+In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code> is fitter or not distinguishable from fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <p><strong>`a &lt; b`</strong>
-In this case, fitness <cite>b</cite> is fitter than fitness <cite>a</cite>, respectively.
+In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code> is fitter than fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code>, respectively.
 (may not always be the case, see lexicographic)</p>
 <p><strong>`a &lt;= b`</strong>
-In this case, fitness <cite>b</cite> is fitter or not distinguishable from fitness <cite>a</cite>, respectively.</p>
+In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code> is fitter or not distinguishable from fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code>, respectively.</p>
 <p><strong>`a &gt;&gt; b`</strong>
-In this case, fitness <cite>a</cite> dominates fitness <cite>b</cite> which is a certain case.</p>
+In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code> dominates fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code> which is a certain case.</p>
 <p><strong>`a &lt;&lt; b`</strong>
-In this case, fitness <cite>a</cite> is dominated by fitness <cite>b</cite>, accordingly.</p>
+In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code> is dominated by fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code>, accordingly.</p>
 </div>
 </div>
 

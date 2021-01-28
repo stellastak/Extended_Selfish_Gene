@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Class Organization &mdash; Extended Selfish Gene (SGX) </title>
+  <title>Class Organization &mdash; The Extended Selfish Gene</title>
   
 
   
@@ -55,7 +55,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Extended Selfish Gene (SGX)
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> The Extended Selfish Gene
           
 
           
@@ -66,6 +66,10 @@
 
           
             
+            
+              <div class="version">
+                1.0
+              </div>
             
           
 
@@ -89,48 +93,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="about_sgx.html">What is SGX?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about_sgx.html#audience">Audience</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/squillero/sgx">Developer repository</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instructions.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fitness.html">Fitness</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Class Organization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#allele">Allele</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#base-allele-class">Base Allele class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#boolean-allele-class">Boolean Allele class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#categorical-allele-class">Categorical Allele class</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#fitness">Fitness</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#base-fitness-class">Base fitness class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fitness-function-class">Fitness Function class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#multi-objective-class">Multi-Objective class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#simple-class">Simple class</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#utils">Utils</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cpu-time">CPU_time</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#jupyter-support">Jupyter Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#random-class">Random class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#archive-class">Archive class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#base-class">Base class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#species-class">Species class</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#sgx-algorithm">SGX Algorithm</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#simple-algorithm-class">Simple Algorithm class</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="#modular-design-rationale">Modular Design Rationale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributors.html">Acknowledgements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Appendix - Terms</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Introduction</span></p>
+              <p class="caption"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about_sgx.html">What is SGX?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about_sgx.html#audience">Audience</a></li>
@@ -197,7 +160,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Extended Selfish Gene (SGX)</a>
+          <a href="index.html">The Extended Selfish Gene</a>
         
       </nav>
 
@@ -346,7 +309,7 @@
 <dl class="py method">
 <dt id="sgx.allele.boolean.Boolean.sigmoid">
 <em class="property">static </em><code class="sig-name descname">sigmoid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">1</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#sgx.allele.boolean.Boolean.sigmoid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Logistic function with given logistic growth (<cite>k</cite>). See <a class="reference external" href="https://en.wikipedia.org/wiki/Logistic_function">https://en.wikipedia.org/wiki/Logistic_function</a></p>
+<dd><p>Logistic function with given logistic growth (<code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code>). See <a class="reference external" href="https://en.wikipedia.org/wiki/Logistic_function">https://en.wikipedia.org/wiki/Logistic_function</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -450,14 +413,14 @@
 <dd><p>Fitness of a phenotype, handle multiple formats (eg. scalar, tuple).</p>
 <p>The class also redefines the relational operator in order to handle different types of optimization
 (eg. maximization, minimization) and to provide limited support to more complex scenarios (eg. multi-objective optimization)</p>
-<p>Equalities (‘==’ and ‘!=’) are based on <cite>is_distinguishable</cite>.</p>
-<p>Single angular-bracket operators (‘&gt;’, ‘&lt;’, ‘&gt;=’, and ‘&lt;=’) are based on <cite>is_fitter</cite> and may be randomized
+<p>Equalities (‘==’ and ‘!=’) are based on <a class="reference internal" href="#sgx.fitness.base.Fitness.is_distinguishable" title="sgx.fitness.base.Fitness.is_distinguishable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_distinguishable</span></code></a>.</p>
+<p>Single angular-bracket operators (‘&gt;’, ‘&lt;’, ‘&gt;=’, and ‘&lt;=’) are based on <a class="reference internal" href="#sgx.fitness.base.Fitness.is_fitter" title="sgx.fitness.base.Fitness.is_fitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fitter</span></code></a> and may be randomized
 (the result may not be reproducible).</p>
-<p>Double angular-bracket operators (‘&gt;&gt;’ and ‘&lt;&lt;’) are based on <cite>is_dominant</cite> and the result is stable. By default
-<cite>is_dominant</cite> is defined as <cite>is_fitter</cite>.</p>
-<p>When subclassing, one should only redefine <cite>is_fitter</cite>, and optionally <cite>is_distinguishable</cite> and <cite>is_dominant</cite>;
-<cite>is_dominant</cite> must be changed if <cite>is_fitter</cite> is randomized (the result is uncertain).</p>
-<p>Additional sanity checks should be added to <cite>check_comparable</cite>. Subclasses may redefine the <cite>decorate</cite> method to
+<p>Double angular-bracket operators (‘&gt;&gt;’ and ‘&lt;&lt;’) are based on <a class="reference internal" href="#sgx.fitness.base.Fitness.is_dominant" title="sgx.fitness.base.Fitness.is_dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dominant</span></code></a> and the result is stable. By default
+<a class="reference internal" href="#sgx.fitness.base.Fitness.is_dominant" title="sgx.fitness.base.Fitness.is_dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dominant</span></code></a> is defined as <a class="reference internal" href="#sgx.fitness.base.Fitness.is_fitter" title="sgx.fitness.base.Fitness.is_fitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fitter</span></code></a>.</p>
+<p>When subclassing, one should only redefine <a class="reference internal" href="#sgx.fitness.base.Fitness.is_fitter" title="sgx.fitness.base.Fitness.is_fitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fitter</span></code></a>, and optionally <a class="reference internal" href="#sgx.fitness.base.Fitness.is_distinguishable" title="sgx.fitness.base.Fitness.is_distinguishable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_distinguishable</span></code></a> and <a class="reference internal" href="#sgx.fitness.base.Fitness.is_dominant" title="sgx.fitness.base.Fitness.is_dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dominant</span></code></a>;
+<a class="reference internal" href="#sgx.fitness.base.Fitness.is_dominant" title="sgx.fitness.base.Fitness.is_dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dominant</span></code></a> must be changed if <a class="reference internal" href="#sgx.fitness.base.Fitness.is_fitter" title="sgx.fitness.base.Fitness.is_fitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fitter</span></code></a> is randomized (the result is uncertain).</p>
+<p>Additional sanity checks should be added to <a class="reference internal" href="#sgx.fitness.base.Fitness.check_comparable" title="sgx.fitness.base.Fitness.check_comparable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_comparable</span></code></a>. Subclasses may redefine the <a class="reference internal" href="#sgx.fitness.base.Fitness.decorate" title="sgx.fitness.base.Fitness.decorate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decorate</span></code></a> method to
 change the values appearance.</p>
 <dl class="py method">
 <dt id="sgx.fitness.base.Fitness.__eq__">
@@ -760,12 +723,12 @@ f2 &gt; sgx.fitness.Vector([23, 9.99], fitness_type=Approximate, abs_tol=.001) i
 <code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Genome.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check the internal consistency of a “paranoid” object.</p>
 <p>The function should be overridden by the sub-classes to implement the
-required, specific checks. It always returns <cite>True</cite>, but throws an
+required, specific checks. It always returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, but throws an
 exception whenever an inconsistency is detected.</p>
 <p><strong>Notez bien</strong>: Sanity checks may be computationally intensive,
 paranoia checks are not supposed to be used in production environments
-(i.e., when <cite>-O</cite> is used for compiling). Their typical usage is:
-<cite>assert foo.run_paranoia_checks()</cite></p>
+(i.e., when <code class="xref py py-obj docutils literal notranslate"><span class="pre">-O</span></code> is used for compiling). Their typical usage is:
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">assert</span> <span class="pre">foo.run_paranoia_checks()</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True (always)</p>
@@ -787,12 +750,12 @@ paranoia checks are not supposed to be used in production environments
 <code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Genotype.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check the internal consistency of a “paranoid” object.</p>
 <p>The function should be overridden by the sub-classes to implement the
-required, specific checks. It always returns <cite>True</cite>, but throws an
+required, specific checks. It always returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, but throws an
 exception whenever an inconsistency is detected.</p>
 <p><strong>Notez bien</strong>: Sanity checks may be computationally intensive,
 paranoia checks are not supposed to be used in production environments
-(i.e., when <cite>-O</cite> is used for compiling). Their typical usage is:
-<cite>assert foo.run_paranoia_checks()</cite></p>
+(i.e., when <code class="xref py py-obj docutils literal notranslate"><span class="pre">-O</span></code> is used for compiling). Their typical usage is:
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">assert</span> <span class="pre">foo.run_paranoia_checks()</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True (always)</p>
@@ -808,18 +771,18 @@ paranoia checks are not supposed to be used in production environments
 <dl class="py class">
 <dt id="sgx.base.Paranoid">
 <em class="property">class </em><code class="sig-prename descclassname">sgx.base.</code><code class="sig-name descname">Paranoid</code><a class="headerlink" href="#sgx.base.Paranoid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract class: Paranoid classes do implement <cite>run_paranoia_checks()</cite>.</p>
+<dd><p>Abstract class: Paranoid classes do implement <a class="reference internal" href="#sgx.base.Paranoid.run_paranoia_checks" title="sgx.base.Paranoid.run_paranoia_checks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_paranoia_checks()</span></code></a>.</p>
 <dl class="py method">
 <dt id="sgx.base.Paranoid.run_paranoia_checks">
 <code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Paranoid.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check the internal consistency of a “paranoid” object.</p>
 <p>The function should be overridden by the sub-classes to implement the
-required, specific checks. It always returns <cite>True</cite>, but throws an
+required, specific checks. It always returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, but throws an
 exception whenever an inconsistency is detected.</p>
 <p><strong>Notez bien</strong>: Sanity checks may be computationally intensive,
 paranoia checks are not supposed to be used in production environments
-(i.e., when <cite>-O</cite> is used for compiling). Their typical usage is:
-<cite>assert foo.run_paranoia_checks()</cite></p>
+(i.e., when <code class="xref py py-obj docutils literal notranslate"><span class="pre">-O</span></code> is used for compiling). Their typical usage is:
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">assert</span> <span class="pre">foo.run_paranoia_checks()</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True (always)</p>
@@ -835,7 +798,7 @@ paranoia checks are not supposed to be used in production environments
 <dl class="py class">
 <dt id="sgx.base.Pedantic">
 <em class="property">class </em><code class="sig-prename descclassname">sgx.base.</code><code class="sig-name descname">Pedantic</code><a class="headerlink" href="#sgx.base.Pedantic" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abstract class: Pedantic classes do implement <cite>is_valid()</cite>.</p>
+<dd><p>Abstract class: Pedantic classes do implement <a class="reference internal" href="#sgx.base.Pedantic.is_valid" title="sgx.base.Pedantic.is_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid()</span></code></a>.</p>
 <dl class="py method">
 <dt id="sgx.base.Pedantic.is_valid">
 <em class="property">abstract </em><code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Pedantic.is_valid" title="Permalink to this definition">¶</a></dt>

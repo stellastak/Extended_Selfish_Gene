@@ -4,8 +4,6 @@ Welcome to Extended Selfish Gene's documentation!
    :caption: Contents
    :maxdepth: 4
 
-   index.rst
-
 .. toctree::
    :caption: Introduction
    :maxdepth: 4

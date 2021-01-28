@@ -16,9 +16,10 @@ sys.path.insert(0, os.path.abspath('../../src'))
 import sgx
 
 
+
 # -- Project information -----------------------------------------------------
 
-project = sgx.__name__
+project = 'The Extended Selfish Gene'
 release = sgx.__version__
 author = sgx.__author__
 title = 'The Extended Selfish Gene'
@@ -27,7 +28,10 @@ copyright = '2021, Giovanni Squillero'
 author = 'Giovanni Squillero, Alberto Tonda, Stella Stakiadi'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.3'
+
+version = '1.0'
+release = '1.0'
+
 
 # -- General configuration ---------------------------------------------------
 
@@ -53,7 +57,10 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = list()
+
+exclude_patterns = ['_build']
+default_role = 'obj'
+pygments_style = 'sphinx'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -61,12 +68,11 @@ exclude_patterns = list()
 # a list of builtin themes.
 #
 
-html_title = f"{sgx.__name__} "
+html_title = 'The Extended Selfish Gene'
 html_short_title = f"The Extended Selfish Gene{sgx.__version__}"
 html_show_copyright = False
 html_show_sphinx = True
 html_theme = 'sphinx_rtd_theme'
-
 html_logo = '../images/logo/tran_dna.png'
 html_favicon = '../images/icons/favicon.png'
 
