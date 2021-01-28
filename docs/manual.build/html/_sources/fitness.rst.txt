@@ -1,6 +1,6 @@
-"""""""
+=======
 Fitness
-"""""""
+=======
 
 Fitness class also redefines the relational operator in order to handle different types of optimization
 (eg. maximization, minimization) and to provide limited support to more complex scenarios

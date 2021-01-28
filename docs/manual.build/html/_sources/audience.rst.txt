@@ -2,7 +2,7 @@
 Audience
 ========
 
-The expected audience for SGX, a 'Quick n' Dirty' numerical optimization,
+The expected audience for SGX, a *'Quick n' Dirty'* numerical optimization,
 includes computer scientists, engineers and practitioners.
 
 * This evolutionary algorithm provides a Sub-Optimal result, which is better than a *"hill-climbing"* algorithm.

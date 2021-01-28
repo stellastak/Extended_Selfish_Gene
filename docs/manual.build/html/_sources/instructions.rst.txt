@@ -53,7 +53,7 @@ while proprietary software is typically meant to generate profits.
 Furthermore, in many cases more organizations and individuals contribute to such projects than to proprietary software.
 It has been shown that technical superiority is typically the primary reason why companies choose open source software.
 
------
+-----------------------------------------------------------------------------------------------------------------------------
 
 The default branch is always the more stable and the only one tested through Travis CI.
 The experimental branches ``exp/*`` contain code and comments that some programmers may find disturbing — Viewers discretion advised.
