@@ -3,7 +3,7 @@ Introduction
 ============
 
 What is SGX?
-============
+------------
 
 The Selfish Gene optimization algorithm (SG) is a population-less evolutionary algorithm
 loosely inspired by the interpretation of the Darwinian theory given by the English
