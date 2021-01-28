@@ -1,8 +1,6 @@
 **Welcome to Extended Selfish Gene's documentation!**
 
 .. toctree::
-   :caption: Contents
-   :maxdepth: 100
    :glob:
 
    intro
