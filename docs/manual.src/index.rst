@@ -2,7 +2,6 @@
 
 .. toctree::
    :caption: Contents
-   :glob:
 
 .. toctree::
    :caption: About Sgx
