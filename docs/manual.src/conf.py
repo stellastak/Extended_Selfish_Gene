@@ -48,7 +48,7 @@ extensions = ['sphinx.ext.autosectionlabel',
 source_suffix = ['.rst', '.md']
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['gettext']
+templates_path = ['_templates']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -65,7 +65,7 @@ html_title = f"{sgx.__name__} "
 html_short_title = f"The Extended Selfish Gene{sgx.__version__}"
 html_show_copyright = False
 html_show_sphinx = True
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'agogo'
 
 html_logo = '../images/logo/tran_dna.png'
 html_favicon = '../images/icons/favicon.png'

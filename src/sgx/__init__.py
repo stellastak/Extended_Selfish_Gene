@@ -34,6 +34,7 @@ See: https://github.com/squillero/sgx
 Copyright © 2021 Giovanni Squillero. Licensed under Apache-2.0.
 """
 
+__title__ = "Extended Selfish Gene (SGX)"
 __name__ = "Extended Selfish Gene (SGX)"
 __version__ = "0.2.dev2"
 __author__ = "Giovanni Squillero", "Alberto Tonda"
