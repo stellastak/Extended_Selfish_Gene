@@ -1,0 +1,957 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Organization &mdash; The Extended Selfish Gene</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+  
+  
+    <link rel="canonical" href="https://read-the-docs-for-sgx.readthedocs.io/class_organization.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Authors" href="authors.html" />
+    <link rel="prev" title="Fitness" href="fitness.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> The Extended Selfish Gene
+          
+
+          
+            
+            <img src="_static/tran_dna.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="about_sgx.html">What is SGX?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_sgx.html#audience">Audience</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about_sgx.html">What is SGX?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_sgx.html#audience">Audience</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/squillero/sgx">Developer repository</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instructions.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitness.html">Fitness</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Class Organization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#allele">Allele</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-allele-class">Base Allele class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boolean-allele-class">Boolean Allele class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#categorical-allele-class">Categorical Allele class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#fitness">Fitness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-fitness-class">Base fitness class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fitness-function-class">Fitness Function class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-objective-class">Multi-Objective class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simple-class">Simple class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#utils">Utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cpu-time">CPU_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jupyter-support">Jupyter Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#random-class">Random class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#archive-class">Archive class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-class">Base class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#species-class">Species class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#sgx-algorithm">SGX Algorithm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simple-algorithm-class">Simple Algorithm class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#modular-design-rationale">Modular Design Rationale</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Copyright</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendixes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Appendix - Terms</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The Extended Selfish Gene</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Class Organization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-organization">
+<h1>Class Organization<a class="headerlink" href="#class-organization" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="allele">
+<h1>Allele<a class="headerlink" href="#allele" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="base-allele-class">
+<h2>Base Allele class<a class="headerlink" href="#base-allele-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.allele.base" title="sgx.allele.base"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.allele.base</span></code></a></p>
+<span class="target" id="module-sgx.allele.base"></span><dl class="py class">
+<dt id="sgx.allele.base.Allele">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.allele.base.</code><code class="sig-name descname">Allele</code><a class="headerlink" href="#sgx.allele.base.Allele" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class for Allele.</p>
+<p>An allele must be Hashable (ie. non modifiable)</p>
+<dl class="py method">
+<dt id="sgx.allele.base.Allele.describe">
+<em class="property">abstract </em><code class="sig-name descname">describe</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#sgx.allele.base.Allele.describe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pretty describes the current allele.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.base.Allele.mode">
+<em class="property">property </em><code class="sig-name descname">mode</code><a class="headerlink" href="#sgx.allele.base.Allele.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the most frequent allele.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.base.Allele.possible_values">
+<em class="property">property </em><code class="sig-name descname">possible_values</code><a class="headerlink" href="#sgx.allele.base.Allele.possible_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possible values of the allele. None if not reasonably applicable (eg. a float)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.base.Allele.sample">
+<em class="property">abstract </em><code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample_type</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'sample'</span></em><span class="sig-paren">)</span> &#x2192; Hashable<a class="headerlink" href="#sgx.allele.base.Allele.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sample_type</strong> – ‘sample’ (default): random value according to the current probability distribution
+‘uniform’: random value according to a uniform probability distribution (ie. completely random)
+‘mode’: most common value according to the current probability distribution</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.base.Allele.update">
+<em class="property">abstract </em><code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">winner</span><span class="p">:</span> <span class="n">Hashable</span></em>, <em class="sig-param"><span class="n">loser</span><span class="p">:</span> <span class="n">Hashable</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#sgx.allele.base.Allele.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the winner and the loser Genotype, so as to modify the new Learning Rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>winner</strong> – The genotype of the better solution.</p></li>
+<li><p><strong>loser</strong> – The genotype of the worse solution.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="boolean-allele-class">
+<h2>Boolean Allele class<a class="headerlink" href="#boolean-allele-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.allele.boolean" title="sgx.allele.boolean"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.allele.boolean</span></code></a></p>
+<span class="target" id="module-sgx.allele.boolean"></span><dl class="py class">
+<dt id="sgx.allele.boolean.Boolean">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.allele.boolean.</code><code class="sig-name descname">Boolean</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">learning_rate</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.001</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.allele.boolean.Boolean" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="sgx.allele.boolean.Boolean.describe">
+<code class="sig-name descname">describe</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#sgx.allele.boolean.Boolean.describe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pretty describes the current boolean allele.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.boolean.Boolean.is_valid">
+<code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Hashable</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.allele.boolean.Boolean.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the allele is boolean.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.boolean.Boolean.run_paranoia_checks">
+<code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.allele.boolean.Boolean.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True, if all tests are passed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.boolean.Boolean.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample_type</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'sample'</span></em><span class="sig-paren">)</span> &#x2192; Hashable<a class="headerlink" href="#sgx.allele.boolean.Boolean.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sample_type</strong> – The type of sample (sample (default), uniform, mode).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.boolean.Boolean.sigmoid">
+<em class="property">static </em><code class="sig-name descname">sigmoid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">1</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#sgx.allele.boolean.Boolean.sigmoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logistic function with given logistic growth (<code class="xref py py-obj docutils literal notranslate"><span class="pre">k</span></code>). See <a class="reference external" href="https://en.wikipedia.org/wiki/Logistic_function">https://en.wikipedia.org/wiki/Logistic_function</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – A float number.</p></li>
+<li><p><strong>k</strong> – Logistic Growth.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The result probability of the sigmoid function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.boolean.Boolean.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">winner</span><span class="p">:</span> <span class="n">Hashable</span></em>, <em class="sig-param"><span class="n">loser</span><span class="p">:</span> <span class="n">Hashable</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#sgx.allele.boolean.Boolean.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the winner and the loser Genotype, so as to modify the new Learning Rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>winner</strong> – The genotype of the better solution.</p></li>
+<li><p><strong>loser</strong> – The genotype of the worse solution.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="categorical-allele-class">
+<h2>Categorical Allele class<a class="headerlink" href="#categorical-allele-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.allele.categorical" title="sgx.allele.categorical"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.allele.categorical</span></code></a></p>
+<span class="target" id="module-sgx.allele.categorical"></span><dl class="py class">
+<dt id="sgx.allele.categorical.Categorical">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.allele.categorical.</code><code class="sig-name descname">Categorical</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alternatives</span><span class="p">:</span> <span class="n">Sequence<span class="p">[</span>Hashable<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">weights</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>Sequence<span class="p">[</span>float<span class="p">]</span><span class="p">, </span>dict<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">learning_rate</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.allele.categorical.Categorical" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="sgx.allele.categorical.Categorical.describe">
+<code class="sig-name descname">describe</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#sgx.allele.categorical.Categorical.describe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pretty describes the current categorical allele.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.categorical.Categorical.is_valid">
+<code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">Hashable</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.allele.categorical.Categorical.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the allele is categorical.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.categorical.Categorical.possible_values">
+<em class="property">property </em><code class="sig-name descname">possible_values</code><a class="headerlink" href="#sgx.allele.categorical.Categorical.possible_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possible values of the allele. None if not reasonably applicable (eg. a float)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.categorical.Categorical.run_paranoia_checks">
+<code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.allele.categorical.Categorical.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True, if all tests are passed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.categorical.Categorical.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample_type</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'sample'</span></em><span class="sig-paren">)</span> &#x2192; Hashable<a class="headerlink" href="#sgx.allele.categorical.Categorical.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sample_type</strong> – The type of sample (sample (default), uniform, mode).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.allele.categorical.Categorical.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">winner</span><span class="p">:</span> <span class="n">Hashable</span></em>, <em class="sig-param"><span class="n">loser</span><span class="p">:</span> <span class="n">Hashable</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#sgx.allele.categorical.Categorical.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the winner and the loser Genotype, so as to modify the new Learning Rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>winner</strong> – The genotype of the better solution.</p></li>
+<li><p><strong>loser</strong> – The genotype of the worse solution.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="fitness">
+<h1>Fitness<a class="headerlink" href="#fitness" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="base-fitness-class">
+<h2>Base fitness class<a class="headerlink" href="#base-fitness-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.fitness.base" title="sgx.fitness.base"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.fitness.base</span></code></a></p>
+<span class="target" id="module-sgx.fitness.base"></span><dl class="py class">
+<dt id="sgx.fitness.base.Fitness">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.fitness.base.</code><code class="sig-name descname">Fitness</code><a class="headerlink" href="#sgx.fitness.base.Fitness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fitness of a phenotype, handle multiple formats (eg. scalar, tuple).</p>
+<p>The class also redefines the relational operator in order to handle different types of optimization
+(eg. maximization, minimization) and to provide limited support to more complex scenarios (eg. multi-objective optimization)</p>
+<p>Equalities (‘==’ and ‘!=’) are based on <a class="reference internal" href="#sgx.fitness.base.Fitness.is_distinguishable" title="sgx.fitness.base.Fitness.is_distinguishable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_distinguishable</span></code></a>.</p>
+<p>Single angular-bracket operators (‘&gt;’, ‘&lt;’, ‘&gt;=’, and ‘&lt;=’) are based on <a class="reference internal" href="#sgx.fitness.base.Fitness.is_fitter" title="sgx.fitness.base.Fitness.is_fitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fitter</span></code></a> and may be randomized
+(the result may not be reproducible).</p>
+<p>Double angular-bracket operators (‘&gt;&gt;’ and ‘&lt;&lt;’) are based on <a class="reference internal" href="#sgx.fitness.base.Fitness.is_dominant" title="sgx.fitness.base.Fitness.is_dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dominant</span></code></a> and the result is stable. By default
+<a class="reference internal" href="#sgx.fitness.base.Fitness.is_dominant" title="sgx.fitness.base.Fitness.is_dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dominant</span></code></a> is defined as <a class="reference internal" href="#sgx.fitness.base.Fitness.is_fitter" title="sgx.fitness.base.Fitness.is_fitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fitter</span></code></a>.</p>
+<p>When subclassing, one should only redefine <a class="reference internal" href="#sgx.fitness.base.Fitness.is_fitter" title="sgx.fitness.base.Fitness.is_fitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fitter</span></code></a>, and optionally <a class="reference internal" href="#sgx.fitness.base.Fitness.is_distinguishable" title="sgx.fitness.base.Fitness.is_distinguishable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_distinguishable</span></code></a> and <a class="reference internal" href="#sgx.fitness.base.Fitness.is_dominant" title="sgx.fitness.base.Fitness.is_dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dominant</span></code></a>;
+<a class="reference internal" href="#sgx.fitness.base.Fitness.is_dominant" title="sgx.fitness.base.Fitness.is_dominant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dominant</span></code></a> must be changed if <a class="reference internal" href="#sgx.fitness.base.Fitness.is_fitter" title="sgx.fitness.base.Fitness.is_fitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_fitter</span></code></a> is randomized (the result is uncertain).</p>
+<p>Additional sanity checks should be added to <a class="reference internal" href="#sgx.fitness.base.Fitness.check_comparable" title="sgx.fitness.base.Fitness.check_comparable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_comparable</span></code></a>. Subclasses may redefine the <a class="reference internal" href="#sgx.fitness.base.Fitness.decorate" title="sgx.fitness.base.Fitness.decorate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decorate</span></code></a> method to
+change the values appearance.</p>
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__eq__">
+<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__eq__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is equal (==) to the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__ge__">
+<code class="sig-name descname">__ge__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__ge__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is greater or equal (&gt;=) to the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__gt__">
+<code class="sig-name descname">__gt__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__gt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is greater (&gt;) than the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__le__">
+<code class="sig-name descname">__le__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__le__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is less or equal (&lt;=) to the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__lshift__">
+<code class="sig-name descname">__lshift__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__lshift__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness does not dominates (&lt;&lt;) the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__lt__">
+<code class="sig-name descname">__lt__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__lt__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is less (&lt;) than the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__ne__">
+<code class="sig-name descname">__ne__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__ne__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness is not equal (!=) to the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.__rshift__">
+<code class="sig-name descname">__rshift__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.__rshift__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if one fitness dominates (&gt;&gt;) the other.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.check_comparable">
+<code class="sig-name descname">check_comparable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.base.Fitness.check_comparable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the fitness is able to be compared.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.decorate">
+<code class="sig-name descname">decorate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#sgx.fitness.base.Fitness.decorate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent the individual fitness value with a nice string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.is_distinguishable">
+<code class="sig-name descname">is_distinguishable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.is_distinguishable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether some differences from the other Fitness may be perceived.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.is_dominant">
+<code class="sig-name descname">is_dominant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.is_dominant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether dominates the other (result is certain).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.is_fitter">
+<code class="sig-name descname">is_fitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.is_fitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether fitter than the other (result may be accidental).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.is_valid">
+<code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fitness</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the fitness is able to be compared, otherwise Raises an Assertion Error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.base.Fitness.run_paranoia_checks">
+<code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.base.Fitness.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if checks are successful.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="sgx.fitness.base.reversed">
+<code class="sig-prename descclassname">sgx.fitness.base.</code><code class="sig-name descname">reversed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fitness_class</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a><a class="headerlink" href="#sgx.fitness.base.reversed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reverse fitness class turning a maximization problem into a minimization one.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="fitness-function-class">
+<h2>Fitness Function class<a class="headerlink" href="#fitness-function-class" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.fitness.function</span></code></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="multi-objective-class">
+<h2>Multi-Objective class<a class="headerlink" href="#multi-objective-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.fitness.multi_objective" title="sgx.fitness.multi_objective"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.fitness.multi_objective</span></code></a></p>
+<span class="target" id="module-sgx.fitness.multi_objective"></span><dl class="py class">
+<dt id="sgx.fitness.multi_objective.Lexicase">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.fitness.multi_objective.</code><code class="sig-name descname">Lexicase</code><span class="sig-paren">(</span><em class="sig-param">value: Sequence</em>, <em class="sig-param">fitness_type: Type[sgx.fitness.base.Fitness] = &lt;class 'sgx.fitness.simple.Scalar'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.multi_objective.Lexicase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pseudo-MO through Lexicase selection (DOI:10.1109/TEVC.2014.2362729).</p>
+<dl class="py method">
+<dt id="sgx.fitness.multi_objective.Lexicase.is_fitter">
+<code class="sig-name descname">is_fitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.multi_objective.Lexicase" title="sgx.fitness.multi_objective.Lexicase">sgx.fitness.multi_objective.Lexicase</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.multi_objective.Lexicase.is_fitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether fitter than the other.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="sgx.fitness.multi_objective.MultiObjective">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.fitness.multi_objective.</code><code class="sig-name descname">MultiObjective</code><span class="sig-paren">(</span><em class="sig-param">value: Sequence</em>, <em class="sig-param">fitness_type: Type[sgx.fitness.base.Fitness] = &lt;class 'sgx.fitness.simple.Scalar'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.multi_objective.MultiObjective" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class for handling Multi-Objective problems.</p>
+<dl class="py method">
+<dt id="sgx.fitness.multi_objective.MultiObjective.is_dominant">
+<code class="sig-name descname">is_dominant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.multi_objective.Lexicase" title="sgx.fitness.multi_objective.Lexicase">sgx.fitness.multi_objective.Lexicase</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.multi_objective.MultiObjective.is_dominant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether dominates the other (result is certain).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.multi_objective.MultiObjective.is_fitter">
+<em class="property">abstract </em><code class="sig-name descname">is_fitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.multi_objective.Lexicase" title="sgx.fitness.multi_objective.Lexicase">sgx.fitness.multi_objective.Lexicase</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.multi_objective.MultiObjective.is_fitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether fitter than the other.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<hr class="docutils" />
+<div class="section" id="simple-class">
+<h2>Simple class<a class="headerlink" href="#simple-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.fitness.simple" title="sgx.fitness.simple"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.fitness.simple</span></code></a></p>
+<span class="target" id="module-sgx.fitness.simple"></span><dl class="py class">
+<dt id="sgx.fitness.simple.Approximate">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.fitness.simple.</code><code class="sig-name descname">Approximate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">argument</span></em>, <em class="sig-param"><span class="n">rel_tol</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">1e-09</span></em>, <em class="sig-param"><span class="n">abs_tol</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.simple.Approximate" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single, floating-point value with approximate equality – Larger is better.</p>
+<dl class="py method">
+<dt id="sgx.fitness.simple.Approximate.check_comparable">
+<code class="sig-name descname">check_comparable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.simple.Approximate" title="sgx.fitness.simple.Approximate">sgx.fitness.simple.Approximate</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.simple.Approximate.check_comparable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the fitness is able to be compared.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.simple.Approximate.decorate">
+<code class="sig-name descname">decorate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#sgx.fitness.simple.Approximate.decorate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent the individual fitness value with a nice string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.simple.Approximate.is_distinguishable">
+<code class="sig-name descname">is_distinguishable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.simple.Approximate.is_distinguishable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether some differences from the other Fitness may be perceived.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.simple.Approximate.is_fitter">
+<code class="sig-name descname">is_fitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.simple.Approximate.is_fitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether fitter than the other.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="sgx.fitness.simple.Integer">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.fitness.simple.</code><code class="sig-name descname">Integer</code><a class="headerlink" href="#sgx.fitness.simple.Integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single numeric value – Larger is better.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="sgx.fitness.simple.Scalar">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.fitness.simple.</code><code class="sig-name descname">Scalar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">/</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.simple.Scalar" title="Permalink to this definition">¶</a></dt>
+<dd><p>A single numeric value – Larger is better.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="sgx.fitness.simple.Vector">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.fitness.simple.</code><code class="sig-name descname">Vector</code><span class="sig-paren">(</span><em class="sig-param">value: Sequence</em>, <em class="sig-param">fitness_type: Type[sgx.fitness.base.Fitness] = &lt;class 'sgx.fitness.simple.Scalar'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.simple.Vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>A generic vector of Fitness values.</p>
+<p>fitness_type is the subtype, <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs are passed to fitness init</p>
+<p class="rubric">Examples</p>
+<p>f1 = sgx.fitness.Vector([23, 10], fitness_type=Approximate, abs_tol=.1)
+f2 = sgx.fitness.Vector([23, 10], fitness_type=Approximate, abs_tol=.001)</p>
+<p>f1 &gt; sgx.fitness.Vector([23, 9.99], fitness_type=Approximate, abs_tol=.1) is False
+f2 &gt; sgx.fitness.Vector([23, 9.99], fitness_type=Approximate, abs_tol=.001) is True</p>
+<dl class="py method">
+<dt id="sgx.fitness.simple.Vector.check_comparable">
+<code class="sig-name descname">check_comparable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.simple.Vector" title="sgx.fitness.simple.Vector">sgx.fitness.simple.Vector</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.fitness.simple.Vector.check_comparable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the fitness is able to be compared.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.simple.Vector.compare_vectors">
+<em class="property">static </em><code class="sig-name descname">compare_vectors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v1</span><span class="p">:</span> <span class="n">Sequence<span class="p">[</span><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">v2</span><span class="p">:</span> <span class="n">Sequence<span class="p">[</span><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#sgx.fitness.simple.Vector.compare_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare Fitness values in v1 and v2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v1</strong> – The first fitness vector.</p></li>
+<li><p><strong>v2</strong> – The second fitness vector.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>-1 if v1 &lt; v2; +1 if v1 &gt; v2; 0 if v1 == v2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.simple.Vector.decorate">
+<code class="sig-name descname">decorate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#sgx.fitness.simple.Vector.decorate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent the individual fitness value with a nice string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.simple.Vector.is_distinguishable">
+<code class="sig-name descname">is_distinguishable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.simple.Vector" title="sgx.fitness.simple.Vector">sgx.fitness.simple.Vector</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.simple.Vector.is_distinguishable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether some differences from the other Fitness may be perceived.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.fitness.simple.Vector.is_fitter">
+<code class="sig-name descname">is_fitter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.fitness.simple.Vector.is_fitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether fitter than the other.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="utils">
+<h1>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="cpu-time">
+<h2>CPU_time<a class="headerlink" href="#cpu-time" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.utils.cpu_time" title="sgx.utils.cpu_time"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.utils.cpu_time</span></code></a></p>
+<span class="target" id="module-sgx.utils.cpu_time"></span></div>
+<div class="section" id="jupyter-support">
+<h2>Jupyter Support<a class="headerlink" href="#jupyter-support" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.utils.jupyter_support" title="sgx.utils.jupyter_support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.utils.jupyter_support</span></code></a></p>
+<span class="target" id="module-sgx.utils.jupyter_support"></span><dl class="py function">
+<dt id="sgx.utils.jupyter_support.is_notebook">
+<code class="sig-prename descclassname">sgx.utils.jupyter_support.</code><code class="sig-name descname">is_notebook</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.utils.jupyter_support.is_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if running inside a notebooks</p>
+<p>Credits: <a class="reference external" href="https://stackoverflow.com/questions/15411967/">https://stackoverflow.com/questions/15411967/</a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.utils.logging" title="sgx.utils.logging"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.utils.logging</span></code></a></p>
+<span class="target" id="module-sgx.utils.logging"></span><dl class="py function">
+<dt id="sgx.utils.logging.log_cpu">
+<code class="sig-prename descclassname">sgx.utils.logging.</code><code class="sig-name descname">log_cpu</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">20</span></em>, <em class="sig-param"><span class="n">msg</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">''</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#sgx.utils.logging.log_cpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like log(), but including cpu time.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="random-class">
+<h2>Random class<a class="headerlink" href="#random-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.utils.random" title="sgx.utils.random"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.utils.random</span></code></a></p>
+<span class="target" id="module-sgx.utils.random"></span></div>
+<div class="section" id="archive-class">
+<h2>Archive class<a class="headerlink" href="#archive-class" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.archive</span></code></p>
+</div>
+<div class="section" id="base-class">
+<h2>Base class<a class="headerlink" href="#base-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.base" title="sgx.base"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.base</span></code></a></p>
+<span class="target" id="module-sgx.base"></span><dl class="py class">
+<dt id="sgx.base.Genome">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.base.</code><code class="sig-name descname">Genome</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.base.Genome" title="Permalink to this definition">¶</a></dt>
+<dd><p>A tuple of Alleles, each one specifying a set of alternative genes.</p>
+<dl class="py method">
+<dt id="sgx.base.Genome.is_valid">
+<code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">genotype</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.base.Genotype" title="sgx.base.Genotype">sgx.base.Genotype</a></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Genome.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check an object against a specification.</p>
+<p>The function may be used to check a value against a parameter definition, a node against a section definition).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the object is valid, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.base.Genome.run_paranoia_checks">
+<code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Genome.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the internal consistency of a “paranoid” object.</p>
+<p>The function should be overridden by the sub-classes to implement the
+required, specific checks. It always returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, but throws an
+exception whenever an inconsistency is detected.</p>
+<p><strong>Notez bien</strong>: Sanity checks may be computationally intensive,
+paranoia checks are not supposed to be used in production environments
+(i.e., when <code class="xref py py-obj docutils literal notranslate"><span class="pre">-O</span></code> is used for compiling). Their typical usage is:
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">assert</span> <span class="pre">foo.run_paranoia_checks()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True (always)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError if some internal data structure is incoherent</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="sgx.base.Genotype">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.base.</code><code class="sig-name descname">Genotype</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.base.Genotype" title="Permalink to this definition">¶</a></dt>
+<dd><p>A tuple containing the organism’s actual genes (their values).</p>
+<dl class="py method">
+<dt id="sgx.base.Genotype.run_paranoia_checks">
+<code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Genotype.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the internal consistency of a “paranoid” object.</p>
+<p>The function should be overridden by the sub-classes to implement the
+required, specific checks. It always returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, but throws an
+exception whenever an inconsistency is detected.</p>
+<p><strong>Notez bien</strong>: Sanity checks may be computationally intensive,
+paranoia checks are not supposed to be used in production environments
+(i.e., when <code class="xref py py-obj docutils literal notranslate"><span class="pre">-O</span></code> is used for compiling). Their typical usage is:
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">assert</span> <span class="pre">foo.run_paranoia_checks()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True (always)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError if some internal data structure is incoherent</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="sgx.base.Paranoid">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.base.</code><code class="sig-name descname">Paranoid</code><a class="headerlink" href="#sgx.base.Paranoid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class: Paranoid classes do implement <a class="reference internal" href="#sgx.base.Paranoid.run_paranoia_checks" title="sgx.base.Paranoid.run_paranoia_checks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_paranoia_checks()</span></code></a>.</p>
+<dl class="py method">
+<dt id="sgx.base.Paranoid.run_paranoia_checks">
+<code class="sig-name descname">run_paranoia_checks</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Paranoid.run_paranoia_checks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the internal consistency of a “paranoid” object.</p>
+<p>The function should be overridden by the sub-classes to implement the
+required, specific checks. It always returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, but throws an
+exception whenever an inconsistency is detected.</p>
+<p><strong>Notez bien</strong>: Sanity checks may be computationally intensive,
+paranoia checks are not supposed to be used in production environments
+(i.e., when <code class="xref py py-obj docutils literal notranslate"><span class="pre">-O</span></code> is used for compiling). Their typical usage is:
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">assert</span> <span class="pre">foo.run_paranoia_checks()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True (always)</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AssertionError if some internal data structure is incoherent</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="sgx.base.Pedantic">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.base.</code><code class="sig-name descname">Pedantic</code><a class="headerlink" href="#sgx.base.Pedantic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract class: Pedantic classes do implement <a class="reference internal" href="#sgx.base.Pedantic.is_valid" title="sgx.base.Pedantic.is_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid()</span></code></a>.</p>
+<dl class="py method">
+<dt id="sgx.base.Pedantic.is_valid">
+<em class="property">abstract </em><code class="sig-name descname">is_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#sgx.base.Pedantic.is_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check an object against a specification.</p>
+<p>The function may be used to check a value against a parameter definition, a node against a section definition).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if the object is valid, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="species-class">
+<h2>Species class<a class="headerlink" href="#species-class" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#module-sgx.species" title="sgx.species"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.species</span></code></a></p>
+<span class="target" id="module-sgx.species"></span><dl class="py class">
+<dt id="sgx.species.Species">
+<em class="property">class </em><code class="sig-prename descclassname">sgx.species.</code><code class="sig-name descname">Species</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">genome</span><span class="p">:</span> <span class="n">Sequence<span class="p">[</span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">fitness_function</span><span class="p">:</span> <span class="n">sgx.fitness.function.FitnessFunction</span></em>, <em class="sig-param"><span class="n">mutation_rate</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.species.Species" title="Permalink to this definition">¶</a></dt>
+<dd><p>Missing</p>
+<dl class="py method">
+<dt id="sgx.species.Species.evaluate">
+<code class="sig-name descname">evaluate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">genotype</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.base.Genotype" title="sgx.base.Genotype">sgx.base.Genotype</a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#sgx.fitness.base.Fitness" title="sgx.fitness.base.Fitness">sgx.fitness.base.Fitness</a><a class="headerlink" href="#sgx.species.Species.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates a genotype according to a specific Fitness Function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>genotype</strong> – The Genotype which is going to be evaluated.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The fitness calculated from a Fitness Function.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.species.Species.sample">
+<code class="sig-name descname">sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sample_type</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">'sample'</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#sgx.base.Genotype" title="sgx.base.Genotype">sgx.base.Genotype</a><a class="headerlink" href="#sgx.species.Species.sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sampling the genotypes with a specific method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sample_type</strong> – The type of sampling is going to be used.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The candidate’s Genotype after sampling.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="sgx.species.Species.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">winner</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.base.Genotype" title="sgx.base.Genotype">sgx.base.Genotype</a></span></em>, <em class="sig-param"><span class="n">loser</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#sgx.base.Genotype" title="sgx.base.Genotype">sgx.base.Genotype</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sgx.species.Species.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the winner and the loser Genotype, so as to modify the new Learning Rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>winner</strong> – The genotype of the better solution.</p></li>
+<li><p><strong>loser</strong> – The genotype of the worse solution.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sgx-algorithm">
+<h1>SGX Algorithm<a class="headerlink" href="#sgx-algorithm" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="simple-algorithm-class">
+<h2>Simple Algorithm class<a class="headerlink" href="#simple-algorithm-class" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.algorithms.simple</span></code></p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="modular-design-rationale">
+<h1>Modular Design Rationale<a class="headerlink" href="#modular-design-rationale" title="Permalink to this headline">¶</a></h1>
+<p>…?</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="authors.html" class="btn btn-neutral float-right" title="Authors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fitness.html" class="btn btn-neutral float-left" title="Fitness" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-28094298-6', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
