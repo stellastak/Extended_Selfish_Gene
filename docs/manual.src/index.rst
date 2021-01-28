@@ -1,8 +1,12 @@
-Welcome to Extended Selfish Gene's documentation!
+**Welcome to Extended Selfish Gene's documentation!**
 
 .. toctree::
    :caption: Contents
-   :maxdepth: 4
+   :maxdepth: 100
+   :glob:
+
+   intro
+   Chapter1 description <chapter1>
 
 .. toctree::
    :caption: Introduction

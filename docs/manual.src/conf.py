@@ -105,5 +105,6 @@ rst_prolog = f"""
 .. |now| replace:: {time.ctime()}
 """
 
+
 def setup(app):
     app.add_stylesheet('custom.css')
