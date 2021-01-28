@@ -2,6 +2,10 @@
 Installation
 """"""""""""
 
+Source Code
+===========
+
+
 SGX is available as a `PyPi package <https://en.wikipedia.org/wiki/Python_Package_Index>`_ from https://pypi.org/project/sgx/ and installing it is as simple as
 
 ::
@@ -17,13 +21,10 @@ and then
 Caveat: on some systems the package manager is ``pip3``.
 
 
-Source Code
-===========
-
 Importance of FOSS
 ------------------
 
-Personal control, customizability and freedom:
+**Personal control, customizability and freedom:**
 
 Users of FOSS benefit from the Four Essential Freedoms to make unrestricted use of,
 and to study, copy, modify, and redistribute such software with or without modification.
@@ -31,7 +32,7 @@ If they would like to change the functionality of software they can bring about 
 distribute such modified versions of the software or often − depending on the software's decision making model and
 its other users − even push or request such changes to be made via updates to the original software.
 
-Privacy and security:
+**Privacy and security:**
 
 Manufacturers of proprietary, closed-source software are sometimes pressured to building in backdoors or other covert,
 undesired features into their software. Instead of having to trust software vendors,
@@ -39,12 +40,12 @@ users of FOSS can inspect and verify the source code themselves and can put trus
 As proprietary code is typically hidden from public view, only the vendors themselves and hackers may be aware
 of any vulnerabilities in them while FOSS involves as many people as possible for exposing bugs quickly.
 
-Low costs or no costs:
+**Low costs or no costs:**
 
 FOSS is often free of charge although donations are often encouraged.
 This also allows users to better test and compare software.
 
-Quality, collaboration and efficiency:
+**Quality, collaboration and efficiency:**
 
 FOSS allows for better collaboration among various parties and individuals with the goal
 of developing the most efficient software for its users or use-cases
