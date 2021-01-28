@@ -135,7 +135,10 @@ Archive class
 :mod:`sgx.archive`
 
 .. automodule:: sgx.archive
+    :imported-members:
     :members:
+    :undoc-members:
+    :show-inheritance:
 
 Base class
 ==========
