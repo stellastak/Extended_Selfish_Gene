@@ -4,6 +4,12 @@ Welcome to Extended Selfish Gene's documentation!
    :caption: Contents
    :maxdepth: 4
 
+   index.rst
+
+.. toctree::
+   :caption: Introduction
+   :maxdepth: 4
+
    about_sgx.rst
    Developer repository <https://github.com/squillero/sgx>
 
