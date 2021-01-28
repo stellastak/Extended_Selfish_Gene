@@ -103,7 +103,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="instructions.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Fitness</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-do-we-handle-a-different-scenario-including-moea">How do we handle a different scenario (including MOEA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-we-handle-a-different-scenario">How do we handle a different scenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-objective-evolutionary-algorithm">Multi-Objective Evolutionary Algorithm</a></li>
 </ul>
 </li>
 </ul>
@@ -192,8 +193,8 @@
 <p>Fitness class also redefines the relational operator in order to handle different types of optimization
 (eg. maximization, minimization) and to provide limited support to more complex scenarios
 (eg. multi-objective optimization).</p>
-<div class="section" id="how-do-we-handle-a-different-scenario-including-moea">
-<h2>How do we handle a different scenario (including MOEA)<a class="headerlink" href="#how-do-we-handle-a-different-scenario-including-moea" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-do-we-handle-a-different-scenario">
+<h2>How do we handle a different scenario<a class="headerlink" href="#how-do-we-handle-a-different-scenario" title="Permalink to this headline">¶</a></h2>
 <p>When subclassing, one’s fitness should only redefine ‘is_fitter’, and optionally ‘is_distinguishable’ and ‘is_dominant’;
 ‘is_dominant’ must be changed if ‘is_fitter’ is randomized (the result is uncertain).</p>
 <p>The idea of several, different scenarios is the following:</p>
@@ -215,6 +216,18 @@ In this case, fitness <code class="xref py py-obj docutils literal notranslate">
 In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code> dominates fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code> which is a certain case.</p>
 <p><strong>`a &lt;&lt; b`</strong>
 In this case, fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">a</span></code> is dominated by fitness <code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code>, accordingly.</p>
+</div>
+<div class="section" id="multi-objective-evolutionary-algorithm">
+<h2>Multi-Objective Evolutionary Algorithm<a class="headerlink" href="#multi-objective-evolutionary-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>The problem becomes more interesting in case that there exist more than one characteristic that should be compared in order to decide which individual is “better”.
+It is very important to find rules that describe characteristics with respect to a property of interest.
+The MOEA approach, a method of combining the traditional genetic algorithm (TGA) with the multi-objective method,
+can consider the relation between the parameters and the objective spaces in the same time then explore the optimum solution.
+Our multi-objective evolutionary algorithm uses a ‘helper’ function which can decide the best individual when there are two comparable characteristics.</p>
+<p>This special Multi-Objective scenario can be illustrated with an airplaine ticket purchase.
+Let us consider the example of buying a flight ticket where the price of ticket and travel time are the decision-making criteria.
+.. image:: ../images/icons/airticket.png</p>
+<p>blabla</p>
 </div>
 </div>
 
