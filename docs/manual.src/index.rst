@@ -20,7 +20,7 @@
    fitness.rst
 
 .. toctree::
-   :caption: API reference
+   :caption: Class Organization
    :maxdepth: 4
 
    class_organization.rst
