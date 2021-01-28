@@ -22,7 +22,7 @@ Caveat: on some systems the package manager is ``pip3``.
 
 
 Importance of FOSS
-------------------
+==================
 
 **Personal control, customizability and freedom:**
 
