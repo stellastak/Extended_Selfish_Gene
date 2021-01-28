@@ -4,8 +4,6 @@
    :caption: Contents
    :glob:
 
-   about_sgx <about_sgx>
-
 .. toctree::
    :caption: Introduction
    :name: Introduction
