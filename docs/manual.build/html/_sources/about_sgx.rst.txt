@@ -1,3 +1,4 @@
+============
 What is SGX?
 ============
 
@@ -36,6 +37,7 @@ Over the years, the algorithm was reimplemented by different researchers in diff
 and a few brand new approaches derived from it (see Google Scholar's up-to-date references).
 In 2016, a comprehensive review was published on IOPScience `"Selfish Gene Algorithm Vs Genetic Algorithm: A Review" (Ariff, Norharyati Md, Khalid, Noor Elaiza Abdul, Hashim, Rathiah, Noor, Noorhayati Mohamed, 2016) <https://iopscience.iop.org/article/10.1088/1757-899X/160/1/012098/pdf>`_.
 
+========
 Audience
 ========
 
