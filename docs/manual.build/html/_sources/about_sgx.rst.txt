@@ -36,18 +36,3 @@ for real and integer optimization" mysteriously crawled its way up to semantic s
 Over the years, the algorithm was reimplemented by different researchers in different languages,
 and a few brand new approaches derived from it (see Google Scholar's up-to-date references).
 In 2016, a comprehensive review was published on IOPScience `"Selfish Gene Algorithm Vs Genetic Algorithm: A Review" (Ariff, Norharyati Md, Khalid, Noor Elaiza Abdul, Hashim, Rathiah, Noor, Noorhayati Mohamed, 2016) <https://iopscience.iop.org/article/10.1088/1757-899X/160/1/012098/pdf>`_.
-
-========
-Audience
-========
-
-The expected audience for SGX, a 'Quick n' Dirty' numerical optimization,
-includes computer scientists, engineers and practitioners.
-
-* This evolutionary algorithm provides a Sub-Optimal result, which is better than a "hill-climbing" algorithm.
-* It is a real, industrial application where fitness function is computationally intensive.
-* Real-time application.
-* SGX also provides an easy-to-use and standard interface.
-* The code is parallelizable, which means that it can run in parallel multiple threads. There is no need to wait for everything to be completed. Some implementations might be Embarrassingly parallel (see `<https://en.wikipedia.org/wiki/Embarrassingly_parallel>`_).
-* SGX is available as a `PyPi package <https://pypi.org/project/sgx/>`_ and it can be easily installed using `pip <https://en.wikipedia.org/wiki/Pip_%28package_manager%29>`_.
-* The modular design allows scholars to extend SGX for custom application.

@@ -9,6 +9,7 @@
    :maxdepth: 4
 
    about_sgx.rst
+   audience.rst
    Developer repository <https://github.com/squillero/sgx>
 
 .. toctree::
