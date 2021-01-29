@@ -16,7 +16,6 @@ sys.path.insert(0, os.path.abspath('../../src'))
 import sgx
 
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'The Extended Selfish Gene'

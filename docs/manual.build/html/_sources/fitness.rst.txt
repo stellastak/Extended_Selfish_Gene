@@ -51,6 +51,11 @@ Our multi-objective evolutionary algorithm uses a 'helper' function which can de
 
 This special Multi-Objective scenario can be illustrated with an airplaine ticket purchase.
 Let us consider the example of buying a flight ticket where the price of ticket and travel time are the decision-making criteria.
+
 .. image:: ../images/icons/airticket.png
+    :width: 200px
+    :align: center
+    :height: 100px
+    :alt: alternate text
 
 blabla
