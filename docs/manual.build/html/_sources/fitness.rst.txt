@@ -57,4 +57,16 @@ Let us consider the example of buying a flight ticket where the price of ticket 
     :align: center
     :height: 200px
 
-blabla
+The points A,B,C,D,E and F represent the options for flying between two cities.
+We assume that difference in travel time is due to the waiting time for connecting flight at transit.
+*Option A* is the most expensive with ticket price of $4000, but with least travel time of 16 hours.
+The cheapest ticket is of $2000 with travel time of 32 hours if one takes flying *Option E*.
+Here the decision-making process of flight booking is not a single objective of either price or travel time.
+The traveler has few options to choose from with some trade-off between travel time and price.
+If one selects *Option B* instead of *Option A*, he will be saving on his ticket price by spending more time on transit.
+Again, if the traveler selects *Option D* instead of *Option E*, he has to sell out more money for buying the ticket,
+but he can save a few hours. If someone chooses *Option F*, he is definitely losing. He can go for *Option B* at same price with less travel time,
+or *Option D* of same travel duration at lower price.
+The points A,B,C,D and E are called *Pareto Optimal Points*, named after the famous Italian economist Vilfredo Pareto.
+They are also called **Non-Dominated** solutions.
+The example of flight options is for a **two-objective optimization**. In multi-objective optimization there can be more than two objectives.

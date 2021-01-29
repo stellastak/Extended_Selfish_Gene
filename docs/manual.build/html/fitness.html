@@ -227,7 +227,19 @@ Our multi-objective evolutionary algorithm uses a ‘helper’ function which ca
 <p>This special Multi-Objective scenario can be illustrated with an airplaine ticket purchase.
 Let us consider the example of buying a flight ticket where the price of ticket and travel time are the decision-making criteria.</p>
 <a class="reference internal image-reference" href="_images/airticket.png"><img alt="_images/airticket.png" class="align-center" src="_images/airticket.png" style="width: 400px; height: 200px;" /></a>
-<p>blabla</p>
+<p>The points A,B,C,D,E and F represent the options for flying between two cities.
+We assume that difference in travel time is due to the waiting time for connecting flight at transit.
+<em>Option A</em> is the most expensive with ticket price of $4000, but with least travel time of 16 hours.
+The cheapest ticket is of $2000 with travel time of 32 hours if one takes flying <em>Option E</em>.
+Here the decision-making process of flight booking is not a single objective of either price or travel time.
+The traveler has few options to choose from with some trade-off between travel time and price.
+If one selects <em>Option B</em> instead of <em>Option A</em>, he will be saving on his ticket price by spending more time on transit.
+Again, if the traveler selects <em>Option D</em> instead of <em>Option E</em>, he has to sell out more money for buying the ticket,
+but he can save a few hours. If someone chooses <em>Option F</em>, he is definitely losing. He can go for <em>Option B</em> at same price with less travel time,
+or <em>Option D</em> of same travel duration at lower price.
+The points A,B,C,D and E are called <em>Pareto Optimal Points</em>, named after the famous Italian economist Vilfredo Pareto.
+They are also called <strong>Non-Dominated</strong> solutions.
+The example of flight options is for a <strong>two-objective optimization</strong>. In multi-objective optimization there can be more than two objectives.</p>
 </div>
 </div>
 
