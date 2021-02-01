@@ -1,6 +1,9 @@
-============
+""""""""""""
 Introduction
-============
+""""""""""""
+------------
+Introduction
+------------
 
 What is SGX?
 ------------
@@ -46,7 +49,7 @@ Audience
 The expected audience for SGX, a *'Quick n' Dirty'* numerical optimization,
 includes computer scientists, engineers and practitioners.
 
-* This evolutionary algorithm provides a Sub-Optimal result, which is better than a *"hill-climbing"* algorithm.
+* This evolutionary algorithm provides a *Sub-Optimal* result, which is **better than a "hill-climbing" algorithm**.
 * It is a **real, industrial application** where fitness function is computationally intensive.
 * **Real-time** application.
 * SGX also provides an easy-to-use and **standard interface**.
