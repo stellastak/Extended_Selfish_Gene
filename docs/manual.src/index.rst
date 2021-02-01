@@ -2,6 +2,7 @@
 
 .. toctree::
    :caption: Contents
+   :maxdepth: 0
 
 .. toctree::
    :caption: About Sgx
