@@ -1,7 +1,8 @@
-============
+""""""""""""
 Introduction
-============
+""""""""""""
 
+------------
 What is SGX?
 ------------
 
@@ -40,13 +41,14 @@ Over the years, the algorithm was reimplemented by different researchers in diff
 and a few brand new approaches derived from it (see Google Scholar's up-to-date references).
 In 2016, a comprehensive review was published on IOPScience `"Selfish Gene Algorithm Vs Genetic Algorithm: A Review" (Ariff, Norharyati Md, Khalid, Noor Elaiza Abdul, Hashim, Rathiah, Noor, Noorhayati Mohamed, 2016) <https://iopscience.iop.org/article/10.1088/1757-899X/160/1/012098/pdf>`_.
 
+--------
 Audience
 --------
 
 The expected audience for SGX, a *'Quick n' Dirty'* numerical optimization,
 includes computer scientists, engineers and practitioners.
 
-* This evolutionary algorithm provides a Sub-Optimal result, which is better than a *"hill-climbing"* algorithm.
+* This evolutionary algorithm provides a *Sub-Optimal* result, which is **better than a "hill-climbing" algorithm**.
 * It is a **real, industrial application** where fitness function is computationally intensive.
 * **Real-time** application.
 * SGX also provides an easy-to-use and **standard interface**.
