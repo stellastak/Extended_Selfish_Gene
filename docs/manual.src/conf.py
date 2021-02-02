@@ -67,7 +67,7 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 #
 
-html_title = 'The Extended Selfish Gene'
+html_title = f"The Extended Selfish Gene"
 html_short_title = f"The Extended Selfish Gene{sgx.__version__}"
 html_show_copyright = False
 html_show_sphinx = True
