@@ -82,7 +82,7 @@ Simple class
 .. automodule:: sgx.fitness.simple
    :members:
 
--------------------------
+----------------------------
 
 """""
 Utils

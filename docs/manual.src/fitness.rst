@@ -49,7 +49,7 @@ The MOEA approach, a method of combining the traditional genetic algorithm (TGA)
 can consider the relation between the parameters and the objective spaces in the same time then explore the optimum solution.
 Our multi-objective evolutionary algorithm uses a 'helper' function which can decide the best individual when there are two comparable characteristics.
 
-- For this reason, SGX implements a specific function called **Lexicase** which can be found at :mod:`sgx.fitness.multi_objective` .
+- For this reason, SGX implements a specific function called **Lexicase** which can be found at :mod:`sgx.fitness.multi_objective` . Lexicase is a selection method that considers training cases individually, rather than in aggregate, when performing individual selection.
 
 This special Multi-Objective scenario can be illustrated with an airplaine ticket purchase.
 Let us consider the example of buying a flight ticket where the price of ticket and travel time
