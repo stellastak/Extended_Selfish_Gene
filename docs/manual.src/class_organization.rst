@@ -159,15 +159,6 @@ SGX Algorithm
    :maxdepth: 4
 
 
-Simple Algorithm class
-======================
-
-:mod:`sgx.algorithms.simple`
-
-.. automodule:: sgx.algorithms.simple
-   :members:
-
--------------------------
 
 """"""""""""""""""""""""
 Modular Design Rationale
