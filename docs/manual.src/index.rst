@@ -39,4 +39,3 @@ Welcome to Extended Selfish Gene's documentation!
    :maxdepth: 4
 
    terminology.rst
-   contributors.rst
