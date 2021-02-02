@@ -1,12 +1,10 @@
-"""""""""""""""""
-Table of Contents
-"""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+Welcome to Extended Selfish Gene's documentation!
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
 .. toctree::
    :caption: Contents
    :maxdepth: 0
-
-**Welcome to Extended Selfish Gene's documentation!**
 
 .. toctree::
    :caption: About Sgx
