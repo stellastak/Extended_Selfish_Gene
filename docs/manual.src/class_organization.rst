@@ -150,16 +150,6 @@ Species class
 
 ----------------------
 
-"""""""""""""
-SGX Algorithm
-"""""""""""""
-
-.. toctree::
-   :caption: Algorithm
-   :maxdepth: 4
-
-
-
 """"""""""""""""""""""""
 Modular Design Rationale
 """"""""""""""""""""""""
