@@ -1,3 +1,7 @@
+"""""""""""""""""
+Table of Contents
+"""""""""""""""""
+
 .. toctree::
    :caption: Contents
    :maxdepth: 0
