@@ -158,3 +158,22 @@ Species class
 Modular Design Rationale
 """"""""""""""""""""""""
 
+**Object-oriented programming (OOP)** is based on the concept of "objects", which can contain data and code:
+data in the form of field, and code, in the form of procedures (often known as methods).
+A feature of objects is that an object's own procedures can access and often modify the data fields of itself.
+In OOP, computer programs are designed by making them out of objects that interact with one another.
+
+Python language is a multi-paradigm and supports object-oriented programming to a greater degree, typically
+in combination with imperative, procedural programming.
+
++---------------------------------------------------------------------+
+|                     Extended Selfish Gene Optimizer                 |
++==================================+==================================+
+|            Genotype              |            Fitness               |
++----------------------------------+-----------------+----------------+
+|             Genome               |Single-Objective | Multi-Objective|
++----------------------------------+-----------------+----------------+
+|             Allele               |   -Int          |     -Char      |
++---------------+------------------+   -Float        |     -Float     |
+|    Boolean    |   Categorical    |   -Double       |      etc.      |
++---------------+------------------+-----------------+----------------+
