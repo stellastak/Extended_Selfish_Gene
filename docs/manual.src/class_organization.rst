@@ -56,9 +56,6 @@ Fitness Function class
 :mod:`sgx.fitness.function`
 
 .. automodule:: sgx.fitness.function
-   :classes:
-   :methods:
-   :modules:
    :members:
 
 ---------------------------
