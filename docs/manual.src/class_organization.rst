@@ -152,10 +152,9 @@ Species class
 .. automodule:: sgx.species
    :members:
 
-----------------------
+------------------------
 
 """"""""""""""""""""""""
 Modular Design Rationale
 """"""""""""""""""""""""
 
-...?

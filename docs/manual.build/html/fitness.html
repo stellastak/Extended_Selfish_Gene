@@ -222,8 +222,12 @@ It is very important to find rules that describe characteristics with respect to
 The MOEA approach, a method of combining the traditional genetic algorithm (TGA) with the multi-objective method,
 can consider the relation between the parameters and the objective spaces in the same time then explore the optimum solution.
 Our multi-objective evolutionary algorithm uses a ‘helper’ function which can decide the best individual when there are two comparable characteristics.</p>
+<ul class="simple">
+<li><p>For this reason, SGX implements a specific function called <strong>Lexicase</strong> which can be found at <a class="reference internal" href="class_organization.html#module-sgx.fitness.multi_objective" title="sgx.fitness.multi_objective"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx.fitness.multi_objective</span></code></a> .</p></li>
+</ul>
 <p>This special Multi-Objective scenario can be illustrated with an airplaine ticket purchase.
-Let us consider the example of buying a flight ticket where the price of ticket and travel time are the decision-making criteria.</p>
+Let us consider the example of buying a flight ticket where the price of ticket and travel time
+are the decision-making criteria.</p>
 <a class="reference internal image-reference" href="_images/airticket.png"><img alt="_images/airticket.png" class="align-center" src="_images/airticket.png" style="width: 400px; height: 200px;" /></a>
 <p>The points A,B,C,D,E and F represent the options for flying between two cities.
 We assume that difference in travel time is due to the waiting time for connecting flight at transit.
