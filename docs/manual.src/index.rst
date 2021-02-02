@@ -40,5 +40,5 @@ Table of Contents
    :caption: Appendixes
    :maxdepth: 4
 
-   contributors.rst
    terminology.rst
+   contributors.rst
