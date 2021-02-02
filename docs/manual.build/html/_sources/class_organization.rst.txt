@@ -6,6 +6,10 @@ Allele
    :caption: Allele
    :maxdepth: 4
 
+An allele can be one of the following types:
+
+- a :mod:`sgx.allele.boolean` which is either "1" or "0".
+- a :mod:`sgx.allele.categorical` (for example "R", "G", "B")
 
 Base Allele class
 =================
